@@ -1,9 +1,9 @@
 ---
 layout: page
-title: About
+title: Works
 ---
 
-Some information about you!
+This is the work page!
 
 ### More Information
 

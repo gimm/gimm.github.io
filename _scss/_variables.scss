@@ -5,7 +5,7 @@
 
 // Colors
 $blue: #4183C4; 
-
+$tomato: tomato;
 // Grays
 $black: #000;
 $darkerGray: #222;
@@ -14,10 +14,10 @@ $gray: #666;
 $lightGray: #eee;
 $white: #fff;
 
-// Font stacks
-$helvetica: Helvetica, Arial, sans-serif;
-$helveticaNeue: "Helvetica Neue", Helvetica, Arial, sans-serif;
-$georgia: Georgia, serif;
+
+// Sizes
+$header-height: 15em;
+
 
 // Mobile breakpoints
 @mixin mobile {

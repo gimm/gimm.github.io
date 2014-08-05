@@ -1,56 +1,67 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
+<head>
+    <meta charset="utf-8"/>
     <meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
 
-    <meta name="author" content="{{ site.name }}" />
+    <meta name="author" content="{{ site.name }}"/>
     <meta name="description" content="{{ site.description }}">
 
     <!--[if lt IE 9]>
-      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
+    <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css"/>
 
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
-  </head>
+</head>
 
-  <body>
-    <div class="wrapper-masthead">
-      <div class="container">
-        <header class="masthead clearfix">
-          <a href="{{ site.baseurl }}/" class="site-avatar"><img src="{{ site.avatar }}" /></a>
-          
-          <div class="site-info">
-            <h1 class="site-name"><a href="{{ site.baseurl }}/">{{ site.name }}</a></h1>
-            <p class="site-description">{{ site.description }}</p>
-          </div>
-          
-          <nav>
-            <a href="{{ site.baseurl }}/">Blog</a>
-            <a href="{{ site.baseurl }}/about">About</a>
-          </nav>
-        </header>
-      </div>
+<body>
+
+<header>
+    <div class="container">
+        <div class="brand">
+            <h1><a href="{{ site.baseurl }}/">Gimm Yu</a></h1>
+
+            <h3><a href="{{ site.baseurl }}/#about">&lt;&nbsp;web developer&nbsp;&gt;</a></h3>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="{{ site.baseurl }}/">Articles</a>
+                </li>
+                <li><a href="{{ site.baseurl }}/work">Works</a>
+                </li>
+            </ul>
+        </nav>
     </div>
+</header>
 
-    <div id="main" role="main" class="container">
-      {{ content }}
+<main role="main" class="container">
+    {{ content }}
+</main>
+
+<footer>
+    <div class="container" id="about">
+        <h3></h3>
+
+        <p>I am a web developer from Wuhan, China. I <a href="/works">make things</a> for the web and
+            write about them on <a href="{{ site.baseurl }}/">my blog here</a>.</p>
+
+        <p>Got any interesting idea or a project to talk about or just want to say Hi? drop me a line on <a
+                href="mailto:{{site.email}}">{{site.email}}</a>.</p>
+        <hr>
+        <div class="baseline">
+            <span>©2014</span>
+            <span>{% include svg-icons.html %}</span>
+            <span><a href="#">&lt;&nbsp;/&nbsp;{{ site.description }}&nbsp;&gt;</a></span>
+        </div>
     </div>
+</footer>
 
-    <div class="wrapper-footer">
-      <div class="container">
-        <footer class="footer">
-          {% include svg-icons.html %}
-        </footer>
-      </div>
-    </div>
-
-    {% include analytics.html %}
-  </body>
+{% include analytics.html %}
+</body>
 </html>
