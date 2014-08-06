@@ -6,7 +6,7 @@
     "url": "{{ post.url }}",
     "title": "{{ post.title }}",
     "data": "{{ post.date | date: "%B %e, %Y" }}",
-    "excerpt": "{{ post.excerpt | strip_newlines | strip }}"
+    "excerpt": "{{ post.excerpt | strip_newlines | strip | escape }}"
 }
 {% endfor %}
 ]
