@@ -18,7 +18,7 @@ module Jekyll
 
   class DataGenerator < Generator
     safe true
-    priority :lowest
+    priority :high
     # Config defaults
     DIR = '/'
     POST_LIST_FILENAME = 'data.html'
@@ -28,7 +28,7 @@ module Jekyll
     #
     # Returns nothing
     def generate(site)
-      dir = File.join(site.dest, DIR)
+      dir = File.join(site.source, DIR)
       filename = POST_LIST_FILENAME
 
       # Create destination directory if it doesn't exist yet. Otherwise, we cannot write our file there.
@@ -41,11 +41,11 @@ module Jekyll
       # file.close
 
       File.open(File.join(dir, filename), 'w') do |file|
-          file.write('my file')
+          file.write('my file xxx')
       end 
 
       # Keep the sitemap.xml file from being cleaned by Jekyll
-      site.static_files << Jekyll::DataFile.new(site, dir, '/', filename)
+      site.static_files << StaticFile.new(site, site.source, '/', filename)
     end
 
   end
