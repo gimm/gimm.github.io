@@ -2,6 +2,11 @@
 layout: default
 ---
 
+<ul>
+    {% for file in site.static_files %}
+       <li>{{ file }}</li>
+    {% endfor%}
+</ul>
 <div class="posts">
   {% for post in site.posts %}
     <article class="post">
