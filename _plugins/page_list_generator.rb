@@ -15,7 +15,6 @@ module Jekyll
   end
 
   class PageListGenerator < Generator
-    safe true
 
     def generate(site)
       site.pages << ListPage.new(site, site.source, 'data', 'list data')
