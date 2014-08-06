@@ -18,7 +18,7 @@ module Jekyll
 
   class DataGenerator < Generator
     safe true
-    priority :high
+    priority :highest
     # Config defaults
     DIR = '/'
     POST_LIST_FILENAME = 'data.html'
