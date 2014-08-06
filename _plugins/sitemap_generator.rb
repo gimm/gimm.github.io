@@ -68,7 +68,7 @@ module Jekyll
   end
 
   class SitemapGenerator < Generator
-
+    priority :high
     # Config defaults
     SITEMAP_FILE_NAME = "/sitemap.xml"
     EXCLUDE = ["/atom.xml", "/feed.xml", "/feed/index.xml"]
