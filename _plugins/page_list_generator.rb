@@ -76,9 +76,9 @@ module Jekyll
 
       # File I/O: create sitemap.xml file and write out pretty-printed XML
      
-      file = File.open(File.join(dir, filename), "w")
+      file = File.new(File.join(dir, filename), "w")
 
-      file.puts('hello data')
+      file.puts('hello xxxxxxxxxxxxx')
       file.close
 
       # Keep the sitemap.xml file from being cleaned by Jekyll
