@@ -87,8 +87,7 @@ defaults:
 
 
 # Collections
-#collections:
-#  bob:
-#    output: true
-#    permalink: /x/:path/
-#    foo: bar
+collections:
+  api:
+    output: true
+    permalink: /api/:path.json
