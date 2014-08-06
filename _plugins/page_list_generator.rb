@@ -61,7 +61,7 @@ module Jekyll
 
     # Config defaults
     DIR = 'data'
-    POST_LIST_FILENAME = 'post.list.json'
+    POST_LIST_FILENAME = 'data.html'
     
 
     # Goes through pages and posts and generates sitemap.xml file
