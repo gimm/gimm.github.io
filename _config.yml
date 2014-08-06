@@ -63,7 +63,7 @@ sass:
 gems:
   - jemoji # Emoji please!
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
-  - data-generator
+  - jekyll-json
 
 # Exclude these files from your production _site
 exclude:

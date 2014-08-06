@@ -1,7 +1,7 @@
 require 'fileutils'
 
 module Jekyll
-  class DataGenerator < Jekyll::Generator
+  class JekyllJson < Jekyll::Generator
     safe true
 
     # Main plugin action, called by Jekyll-core
