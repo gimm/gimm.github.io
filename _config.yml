@@ -2,6 +2,8 @@
 # This file contains configuration flags to customize your site
 #
 
+safe: false
+
 # Name of your site (displayed in the header)
 name: Gimm Yu
 email: yucc2008@gmail.com
