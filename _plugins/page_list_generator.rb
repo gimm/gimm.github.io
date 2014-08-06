@@ -17,7 +17,7 @@ module Jekyll
   end
 
   class SitemapGenerator < Generator
-
+    safe true
     # Config defaults
     DIR = '/'
     POST_LIST_FILENAME = 'data.html'
