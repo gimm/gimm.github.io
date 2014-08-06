@@ -35,10 +35,13 @@ module Jekyll
 
       # File I/O: create sitemap.xml file and write out pretty-printed XML
      
-      file = File.new(File.join(dir, filename), "w")
+      # file = File.new(File.join(dir, filename), "w")
+      # file.write('hello wwww')
+      # file.close
 
-      file.write('hello wwww')
-      file.close
+      File.open(File.join(dir, filename), 'w') do |file|
+          file.write('my file')
+      end 
 
       # Keep the sitemap.xml file from being cleaned by Jekyll
       site.static_files << Jekyll::SitemapFile.new(site, dir, '/', filename)
