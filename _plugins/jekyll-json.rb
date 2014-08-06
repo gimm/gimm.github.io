@@ -7,7 +7,7 @@ module Jekyll
     # Main plugin action, called by Jekyll-core
     def generate(site)
       @site = site
-      unless sitemap_exists?
+      unless data_exists?
         write
         @site.keep_files ||= []
         @site.keep_files << "data.json"
@@ -40,8 +40,8 @@ module Jekyll
     end
 
     # Checks if a sitemap already exists in the site source
-    def sitemap_exists?
-      File.exists? File.expand_path "sitemap.xml", @site.source
+    def data_exists?
+      File.exists? File.expand_path "data.json", @site.source
     end
   end
 end
