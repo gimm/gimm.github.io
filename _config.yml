@@ -87,7 +87,7 @@ defaults:
 
 
 # Collections
-collections:
-  api:
-    output: true
-    permalink: /api/:path.json
+# collections:
+#   api:
+#     output: true
+#     permalink: /api/:path.json
