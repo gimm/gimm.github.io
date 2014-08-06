@@ -57,17 +57,13 @@ module Jekyll
 
   # Recover from strange exception when starting server without --auto
   class SitemapFile < StaticFile
-    
-    def destination(dest)
-      File.join(@base, @dir, @name)
-    end
-
-    def modified?
-      return false
-    end
-
     def write(dest)
-      return true
+      begin
+        super(dest)
+      rescue
+      end
+
+      true
     end
   end
 
