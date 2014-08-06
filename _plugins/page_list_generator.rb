@@ -37,7 +37,7 @@ module Jekyll
      
       file = File.new(File.join(dir, filename), "w")
 
-      file.puts('hello xxxxxxxxxxxxx')
+      file.write('hello wwww')
       file.close
 
       # Keep the sitemap.xml file from being cleaned by Jekyll
