@@ -87,8 +87,8 @@ defaults:
 
 
 # Collections
-collections:
-  bob:
-    output: true
-    permalink: /x/:path/
-    foo: bar
+#collections:
+#  bob:
+#    output: true
+#    permalink: /x/:path/
+#    foo: bar
