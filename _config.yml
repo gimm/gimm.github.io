@@ -9,7 +9,7 @@ email: yucc2008@gmail.com
 description: Web Developer
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: https://avatars2.githubusercontent.com/u/1287933?v=2&s=140
+avatar: https://avatars2.githubusercontent.com/u/1287933?v=1&s=140
 
 #
 # Flags below are optional
@@ -46,8 +46,8 @@ baseurl: ""
 #
 
 markdown: kramdown
-highlighter: pygments
-permalink: /:title
+highlighter: Pygments
+permalink: /article/:title
 
 # The release of Jekyll Now that you're using
 version: v1.0.0
@@ -68,3 +68,27 @@ exclude:
     - Gemfile.lock
     - LICENSE
     - README.md
+
+# Default settings
+defaults:
+  -
+    scope:
+      path: ""
+      type: "post"
+    values:
+      layout: "post"
+      author: "Gimm Yu"
+  -
+    scope:
+      path: ""
+      type: "page"
+    values:
+      layout: "page"
+
+
+# Collections
+collections:
+  bob:
+    output: true
+    permalink: /x/:path/
+    foo: bar

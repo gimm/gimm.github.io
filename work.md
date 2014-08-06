@@ -1,9 +1,9 @@
 ---
-layout: page
 title: Works
 ---
 
 This is the work page!
+
 
 ### More Information
 

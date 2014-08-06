@@ -12,7 +12,8 @@ layout: default
       </h1>
 
       <div class="entry">
-        {{ post.content | truncatewords:40}}
+          {{post.x}}
+        {{ post.excerpt }}
       </div>
     <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
     </article>

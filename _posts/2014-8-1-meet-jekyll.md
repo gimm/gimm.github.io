@@ -1,11 +1,21 @@
 ---
-layout: post
 title: Meet Jekyll
-published: true
+x: xxxxx
+categories: test jekyll
 ---
 
-This is the first post!
+
+First time heard of **Jekyll**, I have the same idea to build a bolg with github as data source as well! :neckbeard:
+
 **Edit in [prose](http://prose.io/)**
-can have image as well.
-![](/_posts/20140805131613.png)
+
+Can have image as well.
+
+
+{% highlight css linenos %}
+body{
+    height: 100%;
+}
+{% endhighlight %}
+
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aliquid deserunt dolor facere id, molestias officia optio sapiente ut! Dolor dolores fugit vel? Ab, accusantium, quas? Dicta, modi veritatis.
