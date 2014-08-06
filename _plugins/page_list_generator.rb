@@ -18,14 +18,6 @@ module Jekyll
     safe true
 
     def generate(site)
-      puts "Hello World!"
-      site.posts.each do |post| 
-        puts post.title
-        puts post.date
-        puts post.tags
-        puts post.url
-        puts post.excerpt 
-      end
       site.pages << ListPage.new(site, site.source, 'data', 'list data')
     end
   end
