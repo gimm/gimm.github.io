@@ -57,18 +57,22 @@ module Jekyll
 
   # Recover from strange exception when starting server without --auto
   class SitemapFile < StaticFile
-    def write(dest)
-      begin
-        super(dest)
-      rescue
-      end
+    def destination(dest)
+      File.join(@base, @dir, @name)
+    end
 
-      true
+    def modified?
+      return false
+    end
+
+    def write(dest)
+      return true
     end
   end
 
   class SitemapGenerator < Generator
-    priority :high
+    safe true
+    priority :highest
     # Config defaults
     SITEMAP_FILE_NAME = "/sitemap.xml"
     EXCLUDE = ["/atom.xml", "/feed.xml", "/feed/index.xml"]
