@@ -1,7 +1,7 @@
 module Jekyll
 
   # Recover from strange exception when starting server without --auto
-  class SitemapFile < StaticFile
+  class DataFile < StaticFile
     
     def destination(dest)
       File.join(@base, @dir, @name)
@@ -16,7 +16,7 @@ module Jekyll
     end
   end
 
-  class SitemapGenerator < Generator
+  class DataGenerator < Generator
     safe true
     # Config defaults
     DIR = '/'
@@ -44,7 +44,7 @@ module Jekyll
       end 
 
       # Keep the sitemap.xml file from being cleaned by Jekyll
-      site.static_files << Jekyll::SitemapFile.new(site, dir, '/', filename)
+      site.static_files << Jekyll::DataFile.new(site, dir, '/', filename)
     end
 
   end
