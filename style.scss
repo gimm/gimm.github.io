@@ -142,8 +142,8 @@ img {
 }
 
 ::selection {
-  color: $black;
-  background: $lightGray;
+  color: $white;
+  background: $tomato;
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -190,6 +190,7 @@ nav {
 //
 header {
   height: $header-height;
+  background-color: $blue;
   background-image: url("images/bg.png");
   background-size: cover;
   background-position: center bottom;
@@ -223,7 +224,7 @@ header {
 // main
 //
 
-.posts > .post {
+.articles > .article {
   padding-bottom: 2em;
   border-bottom: 1px solid $lightGray;
 
@@ -258,14 +259,18 @@ header {
     font-size: .8em;
   }
 }
+.articles-tail{
+  text-align: center;
+  color: $gray;
+  padding: .5em 0;
+}
 
-.post{
+.article{
   h1{
     margin-bottom: 0;
   }
-  .tags a{
-    padding: 0 1em;
-    background-color: rgba($lightGray, .8);
+  .date{
+    text-align: right;
   }
   .comments {
     margin-top: 1em;

@@ -1,3 +1,0 @@
-  {% for file in site.static_files %}
-       <li>xxx {{ file }}</li>
-    {% endfor%}

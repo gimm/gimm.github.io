@@ -1,15 +1,10 @@
 ---
-layout: default
+layout: redirect
 ---
 
-
-<article class="post">
+<article class="article">
     <h1>{{ page.title }}</h1>
-    <p class="tags">
-        {% for tag in page.tags %}
-            <a href="{{site.baseurl}}/tag/{{tag}}">{{tag}}</a>
-        {% endfor %}
-    </p>
+
     <div class="entry">
         {{ content }}
     </div>

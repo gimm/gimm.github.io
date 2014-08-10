@@ -89,8 +89,6 @@ defaults:
       layout: "page"
 
 
-# Collections
-# collections:
-#   api:
-#     output: true
-#     permalink: /api/:path.json
+# Paginate
+paginate: 5
+paginate_path: "list/:num"

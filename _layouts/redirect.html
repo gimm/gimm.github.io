@@ -1,0 +1,10 @@
+<script type="text/javascript">
+    console.log("redirect from", location.pathname);
+    location.hash = location.pathname;
+    location.pathname = "";
+</script>
+<h1>REDIRECT ...</h1>
+
+<div id="data">
+    {{ content }}
+</div>
