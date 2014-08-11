@@ -14,7 +14,8 @@
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="scripts/jquery-2.1.1.js"></script>
+    <!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
 
     <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css"/>
 
@@ -25,19 +26,12 @@
 
 <header>
     <div class="container">
-        <div class="brand">
-            <h1><a href="{{ site.baseurl }}/">Gimm Yu</a></h1>
-
-            <h3><a href="#about">&lt;&nbsp;web developer&nbsp;&gt;</a></h3>
+        <div class="social-links top">
+            {% include svg-icons.html %}
         </div>
-        <nav>
-            <ul>
-                <li><a href="{{ site.baseurl }}/">Articles</a>
-                </li>
-                <li><a href="{{ site.baseurl }}/work">Works</a>
-                </li>
-            </ul>
-        </nav>
+        <div class="brand">
+            <h1><a href="{{ site.baseurl }}/">{{ site.name }}</a><sub>with a <a href="#about">web head</a></sub></h1>
+        </div>
     </div>
 </header>
 
@@ -56,12 +50,14 @@
         <hr>
         <div class="baseline">
             <span>©2014</span>
-            <span>{% include svg-icons.html %}</span>
-            <span><a href="#">&lt;&nbsp;/&nbsp;{{ site.description }}&nbsp;&gt;</a></span>
+            <span class="social-links bottom">{% include svg-icons.html %}</span>
+            <span><a href="#">&lt;&nbsp;/&nbsp;web head&nbsp;&gt;</a></span>
         </div>
     </div>
 </footer>
 <script src="{{ site.baseurl }}/scripts/main.js"></script>
+<script type="text/javascript">var duoshuoQuery = {short_name:"webahead"};</script>
+<script src="http://static.duoshuo.com/embed.js"></script>
 {% include analytics.html %}
 </body>
 </html>

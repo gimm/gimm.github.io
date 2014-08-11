@@ -5,25 +5,23 @@ layout: default
 <div class="articles">
     {% for post in paginator.posts %}
     <article class="article">
-
-        <h1>
-            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-            <sub>{{ post.date | date: "%B %e, %Y" }}</sub>
-        </h1>
-
-        <div class="entry">
-            {{post.x}}
+        <a class="title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        <div class="excerpt">
             {{ post.excerpt }}
         </div>
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+        <div class="footer">
+            <span class="date">{{ post.date | date: "%B %e, %Y" }}</span>
+            <span><a class="read-more" href="{{ site.baseurl }}{{ post.url }}">Read More</a></span>
+        </div>
+
     </article>
     {% endfor %}
 
 </div>
 <div class="articles-tail">
     {% if paginator.next_page %}
-        <a href="/list/{{ paginator.next_page }}" class="next-page">load more articles</a>
+    <a href="/list/{{ paginator.next_page }}" class="next-page">Load more articles</a>
     {% else %}
-        <span>no more article</span>
+    <span>no more article</span>
     {% endif %}
 </div>

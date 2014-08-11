@@ -49,10 +49,20 @@ $(function () {
     };
 
     var lastScrollTop = window.scrollY;
-
+    var siteHeader = $("header");
+    var siteTitle = $(".brand h1 a").get(0);
     window.onscroll = function (e) {
         var tail = $(articleListTailLink).get(0);
-
+        if(siteTitle.getBoundingClientRect().top < window.scrollY){
+            if(!siteHeader.hasClass("fixed")){
+                var h = siteHeader.height();
+                siteHeader.addClass("fixed");
+                siteHeader.height(h);
+            }
+        }else{
+            siteHeader.removeClass("fixed");
+            siteHeader.height("");
+        }
 
         if (tail && !loading && lastScrollTop < window.scrollY && isElementInViewport(tail)) {
             console.log("add");
@@ -83,7 +93,7 @@ function switchPage(url) {
                 console.log("push", url);
                 window.history.pushState({"content": cache[url]}, "gimm", url);
             } else {
-                container.html("error loading resource", url);
+                container.html("Error loading resource", url);
             }
         });
     }
@@ -93,15 +103,15 @@ function switchPage(url) {
 //load more posts, incremental loading of the post list
 function nextPosts() {
     var url = $(articleListTailLink).get(0).href;
+    $(articleListTailLink).html("Loading ...");
     load(url, function (res, status) {
-        $(articleListTailLink).html("loading...");
         if (status === "success") {
             cache[url] = res;
             cache[url] = $("<div>").append(res).find(mainContainer);
             $(articleListWrapper).append(cache[url].find(articleListWrapper + " > .article"));
             $(articleListTail).html(cache[url].find(articleListTail));
         } else {
-            $(articleListTailLink).html("error loading articles!");
+            $(articleListTailLink).html("Error loading articles!");
         }
         loading = false;
     });
