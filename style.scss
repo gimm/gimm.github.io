@@ -110,12 +110,15 @@ header {
   background-image: url("images/bg.png");
   background-size: cover;
   background-position: center bottom;
+  -webkit-box-shadow: 0px 0px 10px 0px rgba($blue, .8);
+  -moz-box-shadow: 0px 0px 10px 0px rgba($blue, .8);
+  box-shadow: 0px 0px 10px 0px rgba($blue, .8);
   .container {
     .brand{
       text-align: center;
       color: white;
       h1{
-        transition: all 1s ease;
+        transition: font-size 1s ease;
         font-size: 3em;
         padding: .5em 0;
         a {
@@ -123,7 +126,6 @@ header {
           color: white;
         }
         sub{
-          color: rgba(255, 255, 255, .9);
           font-size: .5em;
           padding-top: .5em;
           font-weight: normal;
@@ -131,7 +133,7 @@ header {
           display: block;
           a{
             @extend a;
-            color: rgba(255, 255, 255, .9);
+            color: rgba($white, .9);
             &:hover, &:active{
               font-style: normal;
               &:before{
@@ -160,7 +162,12 @@ header {
         width: 100%;
         z-index: 999;
         padding: .1em;
-        background-color: rgba($blue, .8);
+        font-size: 2em;
+        background-color: rgba($blue, 1);
+        -webkit-box-shadow: 0px 0px 10px 0px rgba($blue, .8);
+        -moz-box-shadow: 0px 0px 10px 0px rgba($blue, .8);
+        box-shadow: 0px 0px 10px 0px rgba($blue, .8);
+
         > sub{
           display: none;
         }
