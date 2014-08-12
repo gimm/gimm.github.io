@@ -246,9 +246,6 @@ header {
 
 .article{
 
-  p:first-letter{
-    text-transform: uppercase;
-  }
   .title {
     font-size: 1.5em;
     display: inline-block;
@@ -260,7 +257,55 @@ header {
     background: transparent url(svg-icons/clock.svg) no-repeat;
   }
   .content{
+    font-family: "inconsolata", monospace;
     padding: 1em 0;
+    line-height: 1.5em;
+    h2{
+      margin-top: 1em;
+      font-size: 2em;
+    }
+    h3{
+      margin-top: 1em;
+      font-size: 1.2em;
+    }
+    a[href]{
+      text-decoration: underline !important;
+    }
+    > p {
+      margin: 1em 0;
+      &:first-of-type{
+        color: $gray;
+        font-style: italic;
+        &:before{
+          content: '"';
+          font-size: 3em;
+          position: relative;
+          top: .3em;
+          padding-right: .3em;
+        }
+        &:after{
+          content: '"';
+          font-size: 3em;
+          position: relative;
+          top: .3em;
+        }
+      }
+      &:first-letter {
+        text-transform: uppercase;
+      }
+    }
+    blockquote{
+      padding: 1em 0 1em 1em;
+      font-style: italic;
+      border-left: thick solid $blue;
+      background-color: lightgoldenrodyellow;
+    }
+    li{
+      list-style: disc inside;
+    }
+    strong{
+      font-weight: bold;
+    }
     pre {
       overflow: hidden;
     }

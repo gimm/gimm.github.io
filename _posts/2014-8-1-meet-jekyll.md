@@ -8,14 +8,15 @@ title: Meet Jekyll
 Almost every web developer has tried to set up a personal blog/site, I'm one of these. Nowadays, things get easier as all these cloud platforms came out. We still have to deal with platform specific environment, tools. Early this year, I have tried IBM's [bluemix](bluemix.net) and [Heroku](heroku.com), turns out that Bluemix is buggy and Heroku is slow. 
 
 The hardest part of web development might be the **inputs**, not easy to style, complex to validate, and has to do backend storage work. While a static site can get rid of all these, and GitHub Pages is a perfect place for static files, it provides you customized sub-domain, and instance deploy/update ability with git.
+
 ###Here's some materials to get you started 
 - [GitHub Pages](https://pages.github.com/)
 - [Jekyll](http://jekyllrb.com/)
 - [Jekyll Now](https://github.com/barryclark/jekyll-now)
 
 After fork Jekyll Now, you now have your own home page at GitHub. Jekyll is kind of preprocessor based on templates, meanwhile, provides some syntax [variables](http://jekyllrb.com/docs/variables/). Jekyll enables you to generate static pages on repository update, and with [Disqus](http://disqus.com/), we have a full functional blog without pain.
-> Keep in mind that Jekyll on GitHub doesn't support customized plugins, this takes me 4+ hours to find out!! 
 
+> Keep in mind that Jekyll on GitHub doesn't support customized plugins, this takes me 4+ hours to find out!! 
 > [jekyll-plugins-with-github-pages](https://help.github.com/articles/using-jekyll-plugins-with-github-pages)
 
 ###Let's take it further - single page app
