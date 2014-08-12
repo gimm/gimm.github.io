@@ -6,7 +6,7 @@ layout: redirect
     <div class="title">{{ page.title }}</div>
     <div class="date">{{ page.date | date: "%B %e, %Y" }}</div>
     <div class="content">
-        {{ content | markdownify }}
+        {{ content }}
     </div>
 </article>
 {% if site.related_posts %}
