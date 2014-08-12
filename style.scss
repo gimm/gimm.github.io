@@ -46,7 +46,6 @@ body {
 }
 
 a{
-  transition: color 1s ease;
   text-decoration: none;
   color: $black;
   &:hover, &:active{
@@ -268,12 +267,13 @@ header {
       margin-top: 1em;
       font-size: 1.2em;
     }
-    a[href]{
-      text-decoration: underline !important;
+    a{
+      text-decoration: underline;
     }
     > p {
       margin: 1em 0;
       &:first-of-type{
+        margin-top: 0;
         color: $gray;
         font-style: italic;
         &:before{
@@ -292,13 +292,14 @@ header {
       }
       &:first-letter {
         text-transform: uppercase;
+        padding-left: 2em;
       }
     }
     blockquote{
       padding: 1em 0 1em 1em;
       font-style: italic;
       border-left: thick solid $blue;
-      background-color: lightgoldenrodyellow;
+      background-color: ghostwhite;
     }
     li{
       list-style: disc inside;
