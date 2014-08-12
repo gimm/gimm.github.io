@@ -1,21 +1,22 @@
 ---
 title: Meet Jekyll
-x: xxxxx
-categories: test jekyll
 ---
 
 
-First time heard of **Jekyll**, I have the same idea to build a bolg with github as data source as well! :neckbeard:
+[Jekyll](http://jekyllrb.com/) is the backend engine behind [GitHub Pages](https://pages.github.com/). While GitHub Pages is a good place to host your static files, and Jekyll introduces possibilities to make it **dynamic**.
 
-**Edit in [prose](http://prose.io/)**
+Almost every web developer has tried to set up a personal blog/site, I'm one of these. Nowadays, things get easier as all these cloud platforms came out. We still have to deal with platform specific environment, tools. Early this year, I have tried IBM's [bluemix](bluemix.net) and [Heroku](heroku.com), turns out that Bluemix is buggy and Heroku is slow. 
 
-Can have image as well.
+The hardest part of web development might be the **inputs**, not easy to style, complex to validate, and has to do backend storage work. While a static site can get rid of all these, and GitHub Pages is a perfect place for static files, it provides you customized sub-domain, and instance deploy/update ability with git.
+###Here's some materials to get you started 
+- [GitHub Pages](https://pages.github.com/)
+- [Jekyll](http://jekyllrb.com/)
+- [Jekyll Now](https://github.com/barryclark/jekyll-now)
 
+After fork Jekyll Now, you now have your own home page at GitHub. Jekyll is kind of preprocessor based on templates, meanwhile, provides some syntax [variables](http://jekyllrb.com/docs/variables/). Jekyll enables you to generate static pages on repository update, and with [Disqus](http://disqus.com/), we have a full functional blog without pain.
+> Keep in mind that Jekyll on GitHub doesn't support customized plugins, this takes me 4+ hours to find out!! 
 
-{% highlight css linenos %}
-body{
-    height: 100%;
-}
-{% endhighlight %}
+> [jekyll-plugins-with-github-pages](https://help.github.com/articles/using-jekyll-plugins-with-github-pages)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias aliquid deserunt dolor facere id, molestias officia optio sapiente ut! Dolor dolores fugit vel? Ab, accusantium, quas? Dicta, modi veritatis.
+###Let's take it further - single page app
+Single page app is more efficient and trendy. Every single page app has a start point, and the navigation is triggered by hash change. 
