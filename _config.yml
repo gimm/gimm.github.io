@@ -43,7 +43,7 @@ baseurl: ""
 #
 
 markdown: redcarpet
-highlighter: Pygments
+highlighter: pygments
 permalink: /article/:title
 
 kramdown:
