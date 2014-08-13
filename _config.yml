@@ -42,7 +42,7 @@ baseurl: ""
 # !! You don't need to change any of the configuration flags below !!
 #
 
-markdown: redcarpet
+markdown: redcarpet #kramdown
 highlighter: pygments
 permalink: /article/:title
 
@@ -56,7 +56,7 @@ version: v1.0.0
 # Set the Sass partials directory, as we're using @imports
 sass:
   sass_dir: _scss
-  style: :compressed # You might prefer to minify using :compressed
+  style: :compressed # You might prefer to minify using :compressed or :expanded
 
 # Use the following plug-ins
 gems:

@@ -20,4 +20,31 @@ After fork Jekyll Now, you now have your own home page at GitHub. Jekyll is kind
 > [jekyll-plugins-with-github-pages](https://help.github.com/articles/using-jekyll-plugins-with-github-pages)
 
 ###Let's take it further - single page app
-Single page app is more efficient and trendy. Every single page app has a start point, and the navigation is triggered by hash change. 
+Single page app is more efficient and trendy. Every single page app has a start point, and the navigation is triggered by hash change. As GitHub doesn't support htaccess, we need to do this manually:
+1. create a redirect layout, with javascript piece
+```javascript
+location.hash = location.pathname;
+location.pathname = "";
+```
+This will make gimm.github.io/some-page redirects to gimm.github.io/#some-page
+2. use this layout for every page/post, except for the index page(the start point)
+3. add script to index page to handle the page/post load based on the hash
+```javascript
+// if hash is not empty, load that page
+if (/\w/.test(location.hash)) {
+	var url = baseurl + hash;
+    //load page/post based on this url
+}
+// handle internal links in page
+$(document).on("click", "a[href^='/']", function (e) {
+	var url = this.href;
+  	if (!this.target && (url.indexOf("#") === -1)) {
+  		//load page/post based on this url
+  		e.preventDefault();
+  }
+});
+```
+
+After the steps above, we could have a single page app, and by using [html5 history api](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history), we can replace these hashes with urls. Full details could be found in [main.js](https://github.com/gimm/gimm.github.io/blob/master/scripts/main.js). Actually, GitHub is doing the same thing to achieve partially loading with direct urls.
+
+A single page app is up on GitHub, stable and low-latency.

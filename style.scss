@@ -199,9 +199,9 @@ header {
 
   .article {
     &.newly-load{
-      animation: slide-up 3s;
-      -moz-animation: slide-up 3s;
-      -webkit-animation: slide-up 3s;
+      animation: slide-up 2s;
+      -moz-animation: slide-up 2s;
+      -webkit-animation: slide-up 2s;
       position: relative;
     }
     .title {
@@ -217,24 +217,16 @@ header {
     }
     .footer{
       opacity: .6;
-      span{
-        display: inline-block;
-      }
-      .date{
-        padding-left: 25px;
-        background: transparent url(svg-icons/clock.svg) no-repeat;
-      }
-      .read-more {
+      span:not(:first-child){
         margin-left: 1em;
-        padding-left: 25px;
-        background: transparent url(svg-icons/read-more.svg) no-repeat;
       }
-      &:hover, &:active{
+
+    }
+    &:hover, &:active{
+      .footer{
         opacity: 1;
       }
     }
-
-
   }
 }
 .articles-tail{
@@ -249,11 +241,6 @@ header {
     font-size: 1.5em;
     display: inline-block;
     padding: 1em 0 .5em 0;
-  }
-  .date{
-    opacity: .6;
-    padding-left: 25px;
-    background: transparent url(svg-icons/clock.svg) no-repeat;
   }
   .content{
     font-family: "inconsolata", monospace;
@@ -336,8 +323,6 @@ header {
   padding: 1em 0;
   .show-comment-link{
     display: inline-block;
-    padding-left: 20px;
-    background: transparent url(svg-icons/comment.svg) no-repeat;
     cursor: pointer;
   }
 }
@@ -425,6 +410,7 @@ footer {
 }
 
 
+@import "_icon";
 // Settled on moving the import of syntax highlighting to the bottom of the CSS
 // ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
 @import "_highlights";

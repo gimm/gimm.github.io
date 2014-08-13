@@ -4,7 +4,10 @@ layout: redirect
 
 <article class="article">
     <div class="title">{{ page.title }}</div>
-    <div class="date">{{ page.date | date: "%B %e, %Y" }}</div>
+    <div>
+        <span class="icon icon-clock">{{ page.date | date: "%B %e, %Y" }}</span>
+    </div>
+
     <div class="content">
         {{ content }}
     </div>
@@ -18,7 +21,7 @@ layout: redirect
     </div>
 {% endif %}
 <div class="comments">
-    <div class="show-comment-link">Show Comments</div>
+    <div class="show-comment-link"><span class="icon icon-comment">Show Comments</span></div>
 
     <div id="disqus_thread"></div>
 </div>
