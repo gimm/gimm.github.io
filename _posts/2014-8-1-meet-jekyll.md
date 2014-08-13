@@ -21,14 +21,17 @@ After fork Jekyll Now, you now have your own home page at GitHub. Jekyll is kind
 
 ###Let's take it further - single page app
 Single page app is more efficient and trendy. Every single page app has a start point, and the navigation is triggered by hash change. As GitHub doesn't support htaccess, we need to do this manually:
-1. create a redirect layout, with javascript piece
+- create a redirect layout, with javascript piece
+
 ```javascript
 location.hash = location.pathname;
 location.pathname = "";
 ```
+
 This will make gimm.github.io/some-page redirects to gimm.github.io/#some-page
-2. use this layout for every page/post, except for the index page(the start point)
-3. add script to index page to handle the page/post load based on the hash
+- use this layout for every page/post, except for the index page(the start point)
+- add script to index page to handle the page/post load based on the hash
+
 ```javascript
 // if hash is not empty, load that page
 if (/\w/.test(location.hash)) {
