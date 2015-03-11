@@ -257,7 +257,7 @@ header {
     a{
       text-decoration: underline;
     }
-    img{
+    img:not(.emoji){
       width: 100%;
     }
     > p {
