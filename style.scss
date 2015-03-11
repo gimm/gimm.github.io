@@ -257,6 +257,9 @@ header {
     a{
       text-decoration: underline;
     }
+    img{
+      width: 100%;
+    }
     > p {
       margin: 1em 0;
       &:first-of-type{
