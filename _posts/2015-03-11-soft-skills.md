@@ -2,6 +2,7 @@
 title: Soft skills
 ---
 最近读了[Soft skills](http://www.amazon.com/Soft-Skills-software-developers-manual/dp/1617292397),读下来你感觉不到有什么不对的,满满的正能量。对，有点想鸡汤系列,稍显冗余，但是也不缺乏真知灼见。在此，我列举一下我认为的干货。
+
 - 	> The driven force of a career must come form the individual.
 
 	这是大概是程序员的通病。在职业规划上，随波逐流，甚至听天由命。我就是个典型。总归一句，自己的事，自己得长点心。
