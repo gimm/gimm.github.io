@@ -261,7 +261,7 @@ header {
       width: 100%;
     }
     > p {
-      margin: 1em 0;
+      text-indent: 1em;
       &:first-of-type{
         margin-top: 0;
         color: $gray;
