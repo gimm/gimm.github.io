@@ -262,28 +262,28 @@ header {
     }
     p {
       text-indent: 1em;
-      &:first-of-type{
-        margin-top: 0;
-        color: $gray;
-        font-style: italic;
-        &:before{
-          content: '"';
-          font-size: 3em;
-          position: relative;
-          top: .3em;
-          padding-right: .3em;
-        }
-        &:after{
-          content: '"';
-          font-size: 3em;
-          position: relative;
-          top: .3em;
-        }
-      }
-      &:first-letter {
-        text-transform: uppercase;
-        padding-left: 2em;
-      }
+//      &:first-of-type{
+//        margin-top: 0;
+//        color: $gray;
+//        font-style: italic;
+//        &:before{
+//          content: '"';
+//          font-size: 3em;
+//          position: relative;
+//          top: .3em;
+//          padding-right: .3em;
+//        }
+//        &:after{
+//          content: '"';
+//          font-size: 3em;
+//          position: relative;
+//          top: .3em;
+//        }
+//      }
+//      &:first-letter {
+//        text-transform: uppercase;
+//        padding-left: 2em;
+//      }
     }
     blockquote{
       padding: 1em 0 1em 1em;
