@@ -13,6 +13,6 @@ $icons: mail, github, rss, weibo, clock, read-more, comment;
   $icon: nth($icons, $i);
     .icon-#{$icon}{
       background-image: url(icons.svg);
-      background-position-y: -32*$i+px;
+      background-position: 0 -32*$i+px;
     }
 }
