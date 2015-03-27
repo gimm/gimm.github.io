@@ -261,7 +261,7 @@ header {
       text-decoration: underline;
     }
     img:not(.emoji){
-      width: 100%;
+      max-width: 100%;
     }
     p {
       text-indent: 1em;
