@@ -1,25 +1,8 @@
 ---
 layout: default
 ---
+{{ content }}
 
-<article class="article">
-    <div class="title">{{ page.title }}</div>
-    <div>
-        <span class="icon icon-clock">{{ page.date | date: "%B %e, %Y" }}</span>
-    </div>
-
-    <div class="content">
-        {{ content }}
-    </div>
-</article>
-{% if site.related_posts %}
-    <div class="related-articles">
-        <h3>Related:</h3>
-        {% for post in site.related_posts %}
-            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
-        {% endfor %}
-    </div>
-{% endif %}
 <div id="SOHUCS" sid="{{ page.url }}"></div>
 <script>
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {

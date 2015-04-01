@@ -6,15 +6,17 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0'>
 
-    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
+    <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }}</title>
 
     <meta name="author" content="{{ site.name }}"/>
     <meta name="description" content="{{ site.description }}">
 
     <!--[if lt IE 9]>
-    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <!--<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>-->
     <![endif]-->
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+
+
 
     <link rel="stylesheet" type="text/css" href="/style.css"/>
 
@@ -31,6 +33,13 @@
         <div class="brand">
             <h1><a href="{{ site.baseurl }}/">{{ site.name }}</a><sub>with a <a href="about">web head</a></sub></h1>
         </div>
+        <div class="menu">
+            <ul>
+                <li><a href="/">Article</a></li>
+                <li><a href="/video">Video</a></li>
+                <li><a href="/work">Work</a></li>
+            </ul>
+        </div>
     </div>
 </header>
 
@@ -42,7 +51,7 @@
         <h3></h3>
 
         <p>I am a web developer from Wuhan, China. I <a href="/works">make things</a> for the web and
-            write about them on <a href="{{ site.baseurl }}/">my blog here</a>.</p>
+            write about them <a href="{{ site.baseurl }}/">here</a>.</p>
 
         <p>Got any interesting idea or a project to talk about or just want to say Hi? drop me a line on <a
                 href="mailto:{{site.email}}">{{site.email}}</a>.</p>
@@ -54,6 +63,7 @@
         </div>
     </div>
 </footer>
-<script src="{{ site.baseurl }}/scripts/main.js"></script>
+<!--<script src="{{ site.baseurl }}/scripts/main.js"></script>-->
+<script id="cy_cmt_num" src="http://changyan.sohu.com/upload/plugins/plugins.list.count.js?clientId=cyrHvP6IQ"></script>
 </body>
 </html>

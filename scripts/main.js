@@ -82,8 +82,9 @@ $(function () {
         } else {
             load(url, function (res, status) {
                 if (status === "success") {
-                    cache[url] = res;
-                    cache[url] = $("<div>").append(res).find(dataWrapper).html();
+                    var resWrapper = $("<div>").append(res);
+                    cache[url] = resWrapper.find(dataWrapper).html();
+                    document.title = resWrapper.find("#post-title").text();
                     window.scrollTo(0, 0);
                     container.html(cache[url]);
                     console.log("push", url);
