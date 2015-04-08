@@ -1,10 +1,11 @@
 ---
 title: Gulp explained
+tags: js
 ---
 ![gulpjs](https://raw.githubusercontent.com/gulpjs/artwork/master/gulp.png)
 >Gulp is a streaming JavaScript build system built with node.js; it leverages the power
 of streams and code-over-configuration to automate, organize, and run development
-tasks very quickly and efficiently. Its main features/advantages are: ** automation, stream, code over config **.
+tasks very quickly and efficiently. Its main features/advantages are: **automation, stream, code over config**.
 
 If you didn't touch Gulp yet, go to Gulp's [get started page](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md), you should be in Gulp's world in minutes. Here we're going to walk you through [Gulp's API](https://github.com/gulpjs/gulp/blob/master/docs/API.md) to gain a better understanding of Gulp. This is vital important if you're going to do some development with Gulp, e.g. write your own plguin for Gulp.
 
@@ -45,7 +46,7 @@ gulp.task('getMessage', function(){
     var deferred = require('q').defer();
     setTimeout(function(){
         message = "hello";
-        /deferred.resolve();
+        deferred.resolve();
     }, 1000);
     return deferred;
 });

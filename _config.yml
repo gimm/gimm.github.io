@@ -46,9 +46,15 @@ markdown: redcarpet #kramdown
 highlighter: pygments
 permalink: /article/:title
 
-kramdown:
-  input: GFM
+redcarpet:
+  extensions:
+    - hard_wrap
+    - no_intra_emphasis
+    - autolink
+    - strikethrough
+    - fenced_code_blocks
 
+# excerpt_separator: <!--more-->
 
 # The release of Jekyll Now that you're using
 version: v1.1.0
@@ -100,4 +106,4 @@ defaults:
 
 # Paginate
 paginate: 5
-paginate_path: "list/:num"
+paginate_path: "articles/:num"

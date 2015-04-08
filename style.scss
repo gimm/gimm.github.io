@@ -247,7 +247,7 @@ header {
 .articles-tail{
   text-align: center;
   color: $gray;
-  padding: .5em 0;
+  padding-top: 1em;
 }
 
 .article{
@@ -423,6 +423,25 @@ footer {
       }
     }
   }
+}
+
+
+.archive{
+    h3{
+        font-size: 1.2em;
+        padding: 1em 0 .5em;
+    }
+    li{
+        padding: 0 0 1em 1em;
+        time{
+            display: inline-block;
+            text-decoration: italic;
+            color: gray;
+        }
+        a{
+            display: inline-block;
+        }
+    }
 }
 
 // animation
