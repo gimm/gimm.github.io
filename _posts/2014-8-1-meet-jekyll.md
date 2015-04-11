@@ -14,10 +14,10 @@ The hardest part of web development might be the **inputs**, not easy to style, 
 - [Jekyll](http://jekyllrb.com/)
 - [Jekyll Now](https://github.com/barryclark/jekyll-now)
 
-After fork Jekyll Now, you now have your own home page at GitHub. Jekyll is kind of preprocessor based on templates, meanwhile, provides some syntax [variables](http://jekyllrb.com/docs/variables/). Jekyll enables you to generate static pages on repository update, and with [Disqus](http://disqus.com/), we have a full functional blog without pain.
+After fork Jekyll Now, you now have your own home page at GitHub. Jekyll is kind of preprocessor based on templates, meanwhile, provides some syntax [variables](http://jekyllrb.com/docs/variables/). Jekyll enables you to generate static pages on repository update, and with [Disqus](https://disqus.com/), we have a full functional blog without pain.
 
 > Keep in mind that Jekyll on GitHub doesn't support customized plugins, this takes me 4+ hours to find out!!
-> [jekyll-plugins-with-github-pages](https://help.github.com/articles/using-jekyll-plugins-with-github-pages)
+> [jekyll-plugins-with-github-pages](https://help.github.com/articles/using-jekyll-plugins-with-github-pages/)
 
 ###Let's take it further - single page app
 Single page app is more efficient and trendy. Every single page app has a start point, and the navigation is triggered by hash change. As GitHub doesn't support htaccess, we need to do this manually:
