@@ -8,5 +8,4 @@ Gemfile.lock
 node_modules
 package.json
 .idea
-.sublime-project
-.sublime-workspace
+*.sublime-*
