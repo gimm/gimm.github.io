@@ -5,7 +5,7 @@ layout: default
 <div class="articles">
     {% for post in paginator.posts %}
     <article class="article">
-        <a class="title" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+        <a class="title" href="{{ site.baseurl }}{{ post.url }}/">{{ post.title }}</a>
         <div class="excerpt">
             {{ post.excerpt | strip_html}}
         </div>
