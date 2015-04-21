@@ -155,7 +155,10 @@ header {
 
   @include mobile {
     background-image: none;
-    background-color: $blue;
+    background-color: rgba($blue, .9);
+    .social-links{
+      display: none;
+    }
     .brand{
       h1 {
         text-align: center;
@@ -164,6 +167,9 @@ header {
           display: none;
         }
       }
+    }
+    .menu{
+      text-align: center;
     }
   }
 }

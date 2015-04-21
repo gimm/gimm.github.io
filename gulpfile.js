@@ -1,30 +1,18 @@
 var gulp = require('gulp');
+var gls = require('gulp-live-server');
+var sass = require('gulp-sass');
 
-gulp.task('task1', function(){
-    console.log('task1');
-    process.stdout.setEncoding('utf8');
-    process.stdin.setEncoding('utf8');
-    gulp.src('README.md')
-        .pipe(StringifyStream())
-        .pipe(process.stdout);
+gulp.task('style', function(){
+  gulp.src('_scss/style.scss')
+    .pipe(sass({errLogToConsole: true}))
+    .pipe(gulp.dest('.'));
 });
 
-var stream = require('stream'),
-    util = require('util');
+gulp.task('default', function(){
+  var server = gls.static('.');
+  server.start();
 
-function StringifyStream(options) {
-  if (!(this instanceof StringifyStream))
-    return new StringifyStream(options);
+  gulp.watch(['*.html', '_layouts/*.html', 'style.css'], server.notify);
 
-  options = options || {};
-  options.objectMode = true;
-
-  stream.Transform.call(this,options);
-}
-
-util.inherits(StringifyStream,stream.Transform);
-
-StringifyStream.prototype._transform = function(d,e,callback) {
-  this.push(JSON.stringify(d));
-  callback();
-};
+  gulp.watch('scss/style.scss', ['style']);
+});
