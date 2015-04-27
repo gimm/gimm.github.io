@@ -5,7 +5,12 @@ layout: default
 <article class="article">
     <div class="title"><h2>{{ page.title }}</h2></div>
     <div>
-        <span class="icon icon-clock">{{ page.date | date: "%B %e, %Y" }}</span>
+        <span>
+            <svg class="icon">
+                <use xlink:href="#icon-date" />
+            </svg>
+            {{ page.date | date: "%B %e, %Y" }}
+        </span>
     </div>
 
     <div class="content">

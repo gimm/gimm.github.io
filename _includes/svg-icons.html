@@ -1,12 +1,28 @@
     {% if site.social-links.mail %}
-            <a target="_blank" href="mailto:{{ site.social-links.mail }}"><i class="icon icon-mail"></i></a>
+            <a target="_blank" href="mailto:{{ site.social-links.mail }}">
+                <svg class="icon">
+                    <use xlink:href="#icon-mail" />
+                </svg>
+            </a>
     {% endif %}
     {% if site.social-links.github %}
-            <a target="_blank" href="https://github.com/{{ site.social-links.github }}"><i class="icon icon-github"></i></a>
+            <a target="_blank" href="https://github.com/{{ site.social-links.github }}">
+                <svg class="icon">
+                    <use xlink:href="#icon-github" />
+                </svg>
+            </a>
     {% endif %}
     {% if site.social-links.rss %}
-            <a target="_blank" href="{{ site.baseurl }}/feed.xml"><i class="icon icon-rss"></i></a>
+            <a target="_blank" href="{{ site.baseurl }}/feed.xml">
+                <svg class="icon">
+                    <use xlink:href="#icon-rss" />
+                </svg>
+            </a>
     {% endif %}
     {% if site.social-links.weibo %}
-            <a target="_blank" href="http://www.weibo.com/{{ site.social-links.weibo }}"><i class="icon icon-weibo"></i></a>
+            <a target="_blank" href="http://www.weibo.com/{{ site.social-links.weibo }}">
+                <svg class="icon">
+                    <use xlink:href="#icon-weibo" />
+                </svg>
+            </a>
     {% endif %}

@@ -26,14 +26,6 @@
     <meta name="msapplication-TileImage" content="/images/fav/mstile-144x144.png">
     <meta name="msapplication-config" content="/images/fav/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-
-    <!-- <meta itemprop="name" content="Gulp explained">
-    <meta itemprop="description" content="谈谈gulp的api">
-    <meta itemprop="image" content="https://raw.githubusercontent.com/gulpjs/artwork/master/gulp.png">
-
-    <meta name="author" content="{{ site.author }}"/>
-    <meta name="keywords" content="{% if page.tags %}{% for tag in page.tags %}{{ tag }},{% endfor %}{% endif %}web,dev" />
- -->
     <meta name="baidu-site-verification" content="26UYXTFaWE" />
     <meta name="google-site-verification" content="u4rfI_1wrZTCuxfjRY_z4xoO5WvPZLl1StUJsMdPf6E" />
     <!-- SEO -->
@@ -56,9 +48,18 @@
 </head>
 
 <body>
-
+{% include icons.svg %}
 <header>
     <div class="container">
+        <input type="checkbox" name="trigger" id="trigger">
+        <label for="trigger" class="trigger-label" role="button" aria-labelledby="menu">
+            <svg class="open">
+                <use xlink:href="#icon-menu" />
+            </svg>
+            <svg class="close">
+                <use xlink:href="#icon-close" />
+            </svg>
+        </label>
         <div class="social-links top">
             {% include svg-icons.html %}
         </div>
@@ -89,7 +90,7 @@
                 href="mailto:{{site.email}}">{{site.email}}</a>.</p>
         <hr>
         <div class="baseline">
-            <span>©2014</span>
+            <span>©2015</span>
             <span class="social-links bottom">{% include svg-icons.html %}</span>
             <span><a href="#">&lt;/web head&gt;</a></span>
         </div>

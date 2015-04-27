@@ -9,28 +9,29 @@
 @import "_font";
 // Syntax highlighting @import is at the bottom of this file
 
-// font family
-//copy from http://robinrendle.com/
-h1, h2, h3, h4, h5 {
-  font-family: 'Ideal Sans A', 'Ideal Sans B', "Microsoft Yahei", "微软雅黑", STXihei, "华文细黑", sans-serif;
-}
-
-code {
-  color: #888;
-  font-family: Courier, Monaco, sans-serif
-}
-
 /**************/
 /* BASE RULES */
 /**************/
-
 html {
   font-size: 100%;
-  font-family: 'Mercury SSm A', 'Mercury SSm B', "Microsoft Yahei", "微软雅黑", STXihei, "华文细黑", sans-serif;
+  font-family:  sans-serif;
 }
 
 body {
   background-color: #fefefe;
+  font-family: $font-base;
+  font-weight: 400;
+  font-style: normal
+}
+
+h1, h2, h3, h4, h5 {
+  font-style: normal;
+  font-weight: 500;
+}
+
+code {
+  color: #888;
+  font-family: $font-code;
 }
 
 .container {
@@ -76,7 +77,6 @@ a {
 //
 // nav
 //
-
 .social-links {
   text-align: right;
 
@@ -90,21 +90,17 @@ a {
       opacity: 1;
     }
   }
-
-  @include mobile {
-    text-align: center;
-  }
 }
 
 .menu {
   font-size: 1.5em;
-  font-family: 'Ideal Sans A', 'Ideal Sans B';
   text-align: right;
   li {
     display: inline-block;
     padding-left: 1em;
     a {
-      color: white;
+      color: $white;
+      font: italic bold 20px Georgia, Serif;
       &:hover {
         border-bottom: thick solid tomato;
       }
@@ -120,15 +116,29 @@ header {
   background-image: url("images/bg.png");
   background-size: cover;
   background-position: center bottom;
+  box-shadow: 0px 0px 10px gray;
+  #trigger{
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+  [for='trigger']{
+    display: none;
+  }
   .brand {
     text-align: center;
     color: white;
     h1 {
+      color: $white;
+      font: italic bold 100px Georgia, Serif;
       font-size: 3em;
       padding: .5em 0;
       a {
         @extend a;
         color: white;
+      }
+      > a {
+        text-shadow: 6px 6px 0px rgba(0,0,0,0.2);
       }
       sub {
         font-size: .5em;
@@ -153,23 +163,83 @@ header {
     }
   }
 
-  @include mobile {
+  @include sm {
     background-image: none;
     background-color: rgba($blue, .9);
     .social-links{
       display: none;
     }
+    & > .container{
+      padding: 0;
+    }
     .brand{
       h1 {
         text-align: center;
+        font-size: 2em;
+        height: 55px;
+        line-height: 55px;
         margin: 0;
+        padding: 0;
         sub {
           display: none;
         }
       }
     }
     .menu{
+      visibility: collapse;
+      height: 0;
       text-align: center;
+      transition: height .5s cubic-bezier(0.6, -0.38, 0.18, 1.65);
+    }
+
+    [for="trigger"]{
+      position: absolute;
+      cursor: pointer;
+      display: inline-block;
+      width: 55px;
+      height: 55px;
+      padding: .5em;
+      margin: 0;
+      background-color: rgba(255, 255, 255, .9);
+      svg{
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity 1s linear;
+      }
+      .open{
+        display: inline-block;
+        opacity: 1;
+      }
+      .close{
+        display: none;
+        opacity: 0;
+      }
+    }
+    #trigger:checked{
+      ~ [for="trigger"]{
+        .open{
+          display: none;
+          opacity: 0;
+        }
+        .close{
+          display: inline-block;
+          opacity: 1;
+        }
+      }
+       ~ .menu{
+        visibility: visible;
+        height: 6em;
+        li{
+          display: block;
+        }
+        a{
+          display: block;
+          padding-top: 1em;
+          letter-spacing: .2em;
+        }
+      }
     }
   }
 }
@@ -177,7 +247,6 @@ header {
 //
 // main
 //
-
 .articles {
   .article:not(:last-child) {
     padding-bottom: 2em;
@@ -186,7 +255,6 @@ header {
 
   .article {
     .title {
-      font-family: 'Ideal Sans A', 'Ideal Sans B';
       font-size: 1.5em;
       display: inline-block;
       padding-top: 1em;
@@ -225,7 +293,6 @@ header {
 
   .title {
     font-size: 1.5em;
-    font-family: 'Ideal Sans A', 'Ideal Sans B';
     display: inline-block;
     padding: 1em 0 .5em 0;
   }
@@ -234,7 +301,7 @@ header {
     line-height: 1.5em;
     h2 {
       margin: 1em 0 .5em;
-      font-size: 2em;
+      font-size: 1.5em;
       a {
         text-decoration: none;
       }
@@ -247,7 +314,9 @@ header {
       text-decoration: underline;
     }
     img:not(.emoji) {
-      max-width: 100%;
+      max-width: 95%;
+      display: block;
+      margin: 0 auto;
     }
     li {
       > p:first-child {
@@ -276,7 +345,7 @@ header {
       font-weight: bold;
     }
     pre {
-      overflow: hidden;
+      overflow: auto;
     }
   }
   .comments {
@@ -362,6 +431,11 @@ footer {
       &:last-child a {
         color: $white;
       }
+    }
+  }
+  @include sm{
+    .baseline .social-links{
+      display: none;
     }
   }
 }

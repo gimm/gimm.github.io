@@ -1,18 +1,10 @@
 .icon{
-  padding-left: 20px;
-  min-height: 16px;
+  margin-left: 20px;
+  height: 16px;
+  width: 16px;
   display: inline-block;
   opacity: .7;
-  background-repeat: no-repeat;
   &:hover, &:active{
     opacity: 1;
   }
-}
-$icons: mail, github, rss, weibo, clock, read-more, comment;
-@for $i from 1 through length($icons) {
-  $icon: nth($icons, $i);
-    .icon-#{$icon}{
-      background-image: url(icons.svg);
-      background-position: 0 -32*$i+px;
-    }
 }
