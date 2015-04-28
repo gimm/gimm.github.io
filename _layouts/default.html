@@ -26,8 +26,9 @@
     <meta name="msapplication-TileImage" content="/images/fav/mstile-144x144.png">
     <meta name="msapplication-config" content="/images/fav/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
-    <meta name="baidu-site-verification" content="26UYXTFaWE" />
-    <meta name="google-site-verification" content="u4rfI_1wrZTCuxfjRY_z4xoO5WvPZLl1StUJsMdPf6E" />
+    <meta name="baidu-site-verification" content="JiZ18nU5oE" />
+    <meta name="google-site-verification" content="axJ-MTktrtg-sSBuiLNL6zsG7Ycuij85iMaqKzc0j8s" />
+    <meta name="google" content="notranslate" />
     <!-- SEO -->
     <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html }}{% else %}{{ site.description }}{% endif %}">
     <link rel="canonical" href="{{ site.url }}" />
@@ -43,7 +44,7 @@
 
     <link rel="stylesheet" type="text/css" href="/style.css"/>
 
-    <title>{% if page.title %}{{ page.title }} {% else %} {{ site.name }} {% endif %}</title>
+    <title>{% if page.title %}{{ page.title }} - {{ site.name }}{% else %}{{ site.name }}{% endif %}</title>
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
 </head>
 
