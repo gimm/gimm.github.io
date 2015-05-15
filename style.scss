@@ -115,9 +115,9 @@ a {
 //
 header {
   background-color: $blue;
-  background-image: url("images/bg.png");
+  background-image: url("http://webplatform.adobe.com/img/trianglify-background.svg");
   background-size: cover;
-  background-position: center bottom;
+  // background-position: center bottom;
   box-shadow: 0px 0px 10px gray;
   #trigger{
     opacity: 0;
