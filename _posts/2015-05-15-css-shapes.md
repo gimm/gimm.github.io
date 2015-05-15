@@ -1,7 +1,7 @@
 ---
 title: CSS Shapes
 ---
-![css shapes](../images/poster/css-shapes.svg)
+![css shapes](/images/poster/css-shapes.svg)
 从布局角度来看，一个页面就是由无数个矩型组成的，矩型挨矩型，矩型套矩型，这就是浏览器眼里的网页，也是CSS Positioning，及Content Flow等概念的根基。CSS Shapes的出现将打破这个看似沉闷的方型世界。
 
 一直以来，人们都不甘于网页单一的矩型结构。从最开始的，切图做圆角，阴影，背景填充等，到如今的通过[CSS实现的简单形状](https://css-tricks.com/examples/ShapesOfCSS/)（主要利用border、pseudo element、transform等）。然而这一切都只是假象，在父子兄弟节点眼中，我们的形状依然是个矩形。这就意味这，**这个表面上的形状改变，并不能影响对应的内容排版**。
@@ -26,7 +26,7 @@ title: CSS Shapes
 注意，要使这里的shape-outside起作用，你还需要1、让元素浮动，2、设定高度和宽度。很明显，这给CSS Shape的使用造成了很大的障碍。
 
 Polygon给了我们足够的自由，让文字排版随心所欲，可以做出各种印刷杂志的效果。
-![polygon function](../images/css-shapes/shape-inside-workaround.jpg)
+![polygon function](/images/css-shapes/shape-inside-workaround.jpg)
 
 和SVG路径一样，没有人会真正手写这些polygon节点，这些工作都是依赖工具完成。自然，针对于CSS Shape的polygon也有对应的工具。[CSS Shapes Editor for Chrome](https://chrome.google.com/webstore/detail/css-shapes-editor/nenndldnbcncjmeacmnondmkkfedmgmp)和[CSS Shapes Editor extension for Brackets](https://github.com/adobe-webplatform/brackets-css-shapes-editor)就是很好的代表。
 ![](http://blogs.adobe.com/webplatform/files/2014/09/edit.gif)
