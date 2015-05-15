@@ -30,8 +30,8 @@ h1{
 }
 ```
 元素图层的混合和之前的背景混合大同小异。一个比较好的应用场景就是文字和背景元素的融合。
-<p data-height="457" data-theme-id="0" data-slug-hash="GxlBm" data-default-tab="result" data-user="chriscoyier" class='codepen'></p>
-<script async="async" src="//assets.codepen.io/assets/embed/ei.js"></script>
+<p data-height="268" data-theme-id="0" data-slug-hash="QbNYwE" data-default-tab="result" data-user="gimm" class='codepen'>See the Pen <a href='http://codepen.io/gimm/pen/QbNYwE/'>CSS Blend Mode</a> by Gimm (<a href='http://codepen.io/gimm'>@gimm</a>) on <a href='http://codepen.io'>CodePen</a>.</p>
+<script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
 ###现实中的例子
 前端时间抽空帮同事做个页面，设计师发过来一些切好的图。
@@ -47,5 +47,5 @@ Blend Mode用法很简单，它属于锦上添花型的，是么时候用才是�
 相信很多人都会想到这个混合模式和透明效果比较像，的确如此，但是有细微差别，blend的效果更棒而已。
 
 ###参考链接
-http://webplatform.adobe.com/blend-modes/  
+http://webplatform.adobe.com/blend-modes/ 
 https://css-tricks.com/basics-css-blend-modes/
