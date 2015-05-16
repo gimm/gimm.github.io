@@ -14,7 +14,8 @@ title: CSS Shapes
 ![css shapes method](http://alistapart.com/d/394/shape-rule.png)
 其中，shape property常用的为`shape-outside`和`shape-inside`，分别表示该区域作用于内部或者外部，其它取值可以参考其规范。shape function则有circle、ellipse、inset、和polygon。
 每个形状都是由一系列的点连起来构成的，这样来理解的话，polygon其实是最底层的方法，而前面三个可以看作它的快捷方式。
-之前例子的css代码大致为： 
+之前例子的css代码大致为:
+
 ```css
 .element {
 	shape-outside: circle();
@@ -23,6 +24,7 @@ title: CSS Shapes
 	width: 15em;
 }
 ```
+
 注意，要使这里的shape-outside起作用，你还需要1、让元素浮动，2、设定高度和宽度。很明显，这给CSS Shape的使用造成了很大的障碍。
 
 Polygon给了我们足够的自由，让文字排版随心所欲，可以做出各种印刷杂志的效果。
