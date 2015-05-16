@@ -1,7 +1,7 @@
 ---
 title: CSS Blend Mode
 ---
-![blend mode](/images/poster/blend-mode.png)
+![blend mode](http://webahead.oss-cn-qingdao.aliyuncs.com/images/poster/blend-mode.png)
 常做图片编辑的朋友对图层混合一定不会陌生，而CSS混合模式正是为了在浏览器里做图层混合。长期以来，设计师在Photoshop里达成的视觉效果，最终都导出图片提供给前端工程师使用，混合模式就是这其中的一个例子。浏览器有了混合模式的支持，一切都变得简单得体得多。
 
 ###混合模式是什么
@@ -22,7 +22,7 @@ CSS混合模式目前有两个使用场景，[background-blend-mode](https://dev
 }
 ```
 顾名思义，背景图层的混合操作，首先你要有多个背景图层，这里的背景色和背景图片就构成了2个图层，当然，你还可以加更多的背景图片图层。在上面列举的十多种混合模式，`multiply | screen | overlay`是比较常用的，可以在[这里](http://sarasoueidan.com/demos/css-blender/)快速查看不同效果。
-![background-blend](/images/blend-mode/background-blend.png)
+![background-blend](http://webahead.oss-cn-qingdao.aliyuncs.com/images/blend-mode/background-blend.png)
 ###mix-blend-mode(多DOM元素重叠效果)
 ```css
 h1{
@@ -35,7 +35,7 @@ h1{
 
 ###现实中的例子
 前端时间抽空帮同事做个页面，设计师发过来一些切好的图。
-![cto wiki](/images/blend-mode/cto-wiki.png)
+![cto wiki](http://webahead.oss-cn-qingdao.aliyuncs.com/images/blend-mode/cto-wiki.png)
 
 浏览了一遍图片，发现他竟然把这种色块都给我单独切出来了。作为资深码农，表示没必要，如是我很自然的用了rgba色做了这个色块，使背景地图透出来。
 

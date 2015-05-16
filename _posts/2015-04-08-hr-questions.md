@@ -4,7 +4,7 @@ tags: help hr
 ---
 年初跳槽频繁，身边也有几个同事另寻它处。我也耐不住，刷了一下简历，来了几个面试邀请。本着无所谓试试看的态度就去了。这几次无关痛痒的面试，除了让我意识到武汉有些公司不靠谱，面试要有选择性外，更重要的是，面试过程中经常出现“答非所问”的情况，我很努力的去全面回答某个问题，而面试官却始终得不到他想要的信息。
 
-![hr-questions-poster](/images/poster/hr-questions.gif)
+![hr-questions-poster](http://webahead.oss-cn-qingdao.aliyuncs.com/images/poster/hr-questions.gif)
 
 ###问题一：项目的性质
 
@@ -20,7 +20,7 @@ tags: help hr
 
 ###问题二：设计的扩展性
 
->有如下一个界面，内容框要根据下拉框的不同值来做不同类别的信息查询，如何设计才能使其拥有良好的扩展性？![hr-questions-2](/images/res/hr-questions-2.png)
+>有如下一个界面，内容框要根据下拉框的不同值来做不同类别的信息查询，如何设计才能使其拥有良好的扩展性？![hr-questions-2](http://webahead.oss-cn-qingdao.aliyuncs.com/images/res/hr-questions-2.png)
 
 `这个下拉框列表的值可以都放在后台，这样它是动态的，从后台获取，最后传回后台服务，这样的以后需要添加其他类型，前端代码不需要更改。`
 
