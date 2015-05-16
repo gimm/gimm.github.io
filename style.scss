@@ -263,6 +263,7 @@ header {
     }
     .excerpt {
       padding-bottom: 1em;
+      line-height: 1.2;
       pre {
         overflow: hidden;
       }
@@ -310,6 +311,7 @@ header {
     }
     a {
       text-decoration: underline;
+      word-break: break-word;
     }
     img:not(.emoji) {
       max-width: 95%;
@@ -368,7 +370,7 @@ header {
 
 //footer about
 footer {
-  background-color: $gray;
+  background-color: $black;
   color: white;
   line-height: 2em;
   .container {

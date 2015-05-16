@@ -14,7 +14,7 @@ title: CSS Shapes
 ![css shapes method](http://alistapart.com/d/394/shape-rule.png)
 其中，shape property常用的为`shape-outside`和`shape-inside`，分别表示该区域作用于内部或者外部，其它取值可以参考其规范。shape function则有circle、ellipse、inset、和polygon。
 每个形状都是由一系列的点连起来构成的，这样来理解的话，polygon其实是最底层的方法，而前面三个可以看作它的快捷方式。
-之前例子的css代码大致为：
+之前例子的css代码大致为： 
 ```css
 .element {
 	shape-outside: circle();
@@ -36,5 +36,5 @@ CSS Shapes主要是用来优化文字排版，让页面可以做得更精美。
 它还处在一个很不成熟的阶段，[浏览器支持](http://caniuse.com/#feat=css-shapes)也不是很好。莫名其妙我的Chrome 42竟然不支持，也没法做实例，无奈到处盗图，见谅。更多的例子可以查看[Adobe CSS Shape Collection](http://codepen.io/collection/lrmwd/)。
 
 ###参考链接
-http://alistapart.com/article/css-shapes-101 
-http://www.html5rocks.com/en/tutorials/shapes/getting-started/
+- http://alistapart.com/article/css-shapes-101 
+- http://www.html5rocks.com/en/tutorials/shapes/getting-started/

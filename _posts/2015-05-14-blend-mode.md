@@ -1,5 +1,5 @@
 ---
-title: css blend mode
+title: CSS Blend Mode
 ---
 ![blend mode](/images/poster/blend-mode.png)
 常做图片编辑的朋友对图层混合一定不会陌生，而CSS混合模式正是为了在浏览器里做图层混合。长期以来，设计师在Photoshop里达成的视觉效果，最终都导出图片提供给前端工程师使用，混合模式就是这其中的一个例子。浏览器有了混合模式的支持，一切都变得简单得体得多。
