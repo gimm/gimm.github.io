@@ -4,73 +4,14 @@
 //
 // IMPORTS
 //
-@import "_reset";
 @import "_variables";
-// @import "_font";
-// Syntax highlighting @import is at the bottom of this file
+@import "_base";
+@import "_layout";
 
 /**************/
 /* BASE RULES */
 /**************/
-html {
-  font-size: 100%;
-  font-family:  sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
 
-body {
-  background-color: #fefefe;
-  font-family: $font-base;
-  font-weight: 400;
-  font-style: normal;
-}
-
-h1, h2, h3, h4, h5 {
-  font-style: normal;
-  font-weight: 500;
-}
-
-code {
-  color: #888;
-  font-family: $font-code;
-}
-
-.container {
-  margin: 0 auto;
-  max-width: 920px;
-  padding: 0 10px;
-}
-
-a {
-  text-decoration: none;
-  color: $black;
-  &:hover, &:active {
-    color: $tomato;
-  }
-}
-
-::selection {
-  color: $white;
-  background: $tomato;
-}
-
-::-moz-selection {
-  color: $white;
-  background: $tomato;
-}
-
-// Nicolas Gallagher's micro clearfix hack
-// http://nicolasgallagher.com/micro-clearfix-hack/
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}
 
 /*********************/
 /* LAYOUT / SECTIONS */
@@ -114,10 +55,8 @@ a {
 // header
 //
 header {
-  background-color: $blue;
-  background-image: url("http://webplatform.adobe.com/img/trianglify-background.svg");
-  background-size: cover;
-  // background-position: center bottom;
+  background-image: url("{{site.cnd}}/images/trianglify-background.svg"), url("{{site.cnd}}/images/halftone.png");
+  background-blend-mode: multiply;
   box-shadow: 0px 0px 10px gray;
   #trigger{
     opacity: 0;
@@ -166,8 +105,6 @@ header {
   }
 
   @include sm {
-    background-image: none;
-    background-color: rgba($blue, .9);
     .social-links{
       display: none;
     }
@@ -284,12 +221,10 @@ header {
 
 .articles-tail {
   text-align: center;
-  color: $gray;
   padding-top: 1em;
 }
 
 .article {
-
   .title {
     font-size: 1.5em;
     display: inline-block;
@@ -311,7 +246,7 @@ header {
     }
     a {
       text-decoration: underline;
-      word-break: break-word;
+      word-break: break-all;
     }
     img:not(.emoji) {
       max-width: 95%;
@@ -320,6 +255,7 @@ header {
     }
     li {
       > p:first-child {
+        display: inline;
         font-weight: bold;
         text-transform: capitalize;
       }
@@ -328,14 +264,14 @@ header {
       }
     }
     p {
-      text-indent: 1em;
+      text-indent: 2em;
       padding: .4em 0;
       line-height: 1.5em;
     }
     blockquote {
       padding: 1em 0 1em 1em;
       font-style: italic;
-      border-left: thick solid $blue;
+      border-left: thick solid darken(ghostwhite, 30%);
       background-color: ghostwhite;
     }
     li {
@@ -353,10 +289,24 @@ header {
   }
 }
 
+// Comments
+.comment-btn{
+  background-color: $blue;
+  color: $white;
+  font-size: 1.2em;
+  display: block;
+  text-align: center;
+  border: none;
+  margin: 1em auto;
+  padding: .3em .6em;
+  cursor: pointer;
+  font-family: inherit;
+}
+
 .related-articles {
   padding: .5em 0;
-  border-top: 1px dashed $blue;
-  border-bottom: 1px dashed $blue;
+  border-top: 1px dashed $lightGray;
+  border-bottom: 1px dashed $lightGray;
 
   h3 {
     font-size: 1.2em;
@@ -370,7 +320,8 @@ header {
 
 //footer about
 footer {
-  background-color: $black;
+  background: $gray url("{{site.cnd}}/images/trianglify-background.svg") bottom left;
+  background-blend-mode: multiply;
   color: white;
   line-height: 2em;
   .container {
@@ -378,13 +329,12 @@ footer {
   }
   a {
     text-decoration: none;
-    color: wheat;
+    color: $tomato;
   }
   h3:first-child {
     margin: 0 auto;
     text-align: center;
-    background: transparent url('images/photo.jpg') no-repeat center;
-    background-size: cover;
+    background: transparent url('{{site.cnd}}/images/photo.jpg') no-repeat center;
     width: 100px;
     height: 100px;
     border: 10px solid rgba(200, 200, 200, .5);
@@ -458,7 +408,15 @@ footer {
   }
 }
 
-@import "_icon";
-// Settled on moving the import of syntax highlighting to the bottom of the CSS
-// ... Otherwise it really bloats up the top of the CSS file and makes it difficult to find the start
-@import "_highlights";
+// Icon
+.icon{
+  margin-left: 20px;
+  height: 16px;
+  width: 16px;
+  display: inline-block;
+  opacity: .7;
+  vertical-align: middle;
+  &:hover, &:active{
+    opacity: 1;
+  }
+}

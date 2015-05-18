@@ -1,0 +1,64 @@
+---
+---
+@import "_variables";
+.work-item{
+    display: block;
+    position: relative;
+    height: 300px;
+    width: 400px;
+    margin: 2em auto;
+    background-position: center center;
+    box-shadow: $lightGray 3px 5px 3px 0px;
+    color: white;
+    border-top: 1px $lightGray solid;
+    border-left: 1px $lightGray solid;
+    background-size: contain;
+
+    &.google-luck{
+        background: transparent url("{{site.cnd}}/images/works/google-luck.png") no-repeat;
+    }
+    &.gulp-live-server{
+        background: transparent url("{{site.cnd}}/images/works/gulp-live-server.png") no-repeat;
+    }
+
+    h1{
+        position: absolute;
+        bottom: 0;
+        font-size: 2em;
+        padding: .5em 0;
+        width: 100%;
+        background-color: rgba($gray, 0.9);
+        text-align: center;
+        transition: bottom 1s ease;
+    }
+    p{
+        position: absolute;
+        bottom: -2em;
+        opacity: 0;
+        transition: bottom 1s ease;
+    }
+
+    &:hover, &:active{
+        color: white;
+        h1{
+            bottom: 1em;
+        }
+        p{
+            bottom: 0;
+            opacity: 1;
+            background-color: rgba($gray, 0.9);
+        }
+    }
+
+    @include sm{
+        width: 100%;
+        h1{
+            bottom: 1em;
+        }
+        p{
+            bottom: 0;
+            opacity: 1;
+            background-color: rgba($gray, 0.9);
+        }
+    }
+}

@@ -47,5 +47,5 @@ Blend Mode用法很简单，它属于锦上添花型的，是么时候用才是�
 相信很多人都会想到这个混合模式和透明效果比较像，的确如此，但是有细微差别，blend的效果更棒而已。
 
 ###参考链接
-http://webplatform.adobe.com/blend-modes/ 
-https://css-tricks.com/basics-css-blend-modes/
+- http://webplatform.adobe.com/blend-modes/
+- https://css-tricks.com/basics-css-blend-modes/

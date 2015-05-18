@@ -1,16 +1,11 @@
-//
-// VARIABLES
-//
-
 // Colors
-$blue: #1F3A93;
-$tomato: tomato;
-// Grays
-$black: #333;
-$gray: #666;
+$black: black;
+$gray: #333;
 $lightGray: #eee;
+$code-gray: #888;
+$blue: #0074d9;
+$tomato: tomato;
 $white: white;
-
 
 // Sizes
 $header-height: 15em;
@@ -19,7 +14,7 @@ $header-height: 15em;
 $font-base: 'Ideal Sans A', "Microsoft Yahei", "微软雅黑", STXihei, "华文细黑", sans-serif;
 $font-code: Courier, Monaco, sans-serif;
 
-// Mobile breakpoints
+// Breakpoints
 @mixin sm {
   @media screen and (max-width: 48em) {
     @content;
