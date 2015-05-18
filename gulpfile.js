@@ -3,7 +3,7 @@ var gls = require('gulp-live-server');
 var sass = require('gulp-sass');
 
 gulp.task('style', function(){
-  gulp.src('_scss/style.scss')
+  gulp.src('_scss/main.scss')
     .pipe(sass({errLogToConsole: true}))
     .pipe(gulp.dest('.'));
 });
@@ -14,5 +14,5 @@ gulp.task('default', function(){
 
   gulp.watch(['*.html', '_layouts/*.html', 'style.css'], server.notify);
 
-  gulp.watch('scss/style.scss', ['style']);
+  gulp.watch('scss/main.scss', ['style']);
 });
