@@ -52,7 +52,6 @@
                         head.insertBefore(script_version, head.firstChild);
                     })();
                 }else{
-                    <!--高速版，加载速度快，使用前需测试页面的兼容性-->
                     (function(){
                         var appid = 'cyrHvP6IQ',
                                 conf = 'prod_0b1f5470d926872fc636a0397ac75310';
@@ -65,7 +64,7 @@
                         h.insertBefore(s,h.firstChild);
                         window.SCS_NO_IFRAME = true;
                     })();
-                    }
+                }
             }, false);
         }
     };

@@ -319,7 +319,7 @@ header {
 
 //footer about
 footer {
-  background: $gray url("http://webplatform.adobe.com/img/trianglify-background.svg") bottom left;
+  background: $gray url("{{site.cnd}}/images/trianglify-background.svg") bottom left;
   background-blend-mode: multiply;
   color: white;
   line-height: 2em;
