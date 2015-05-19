@@ -12,18 +12,48 @@ layout: default
             {{ page.date | date: "%B %e, %Y" }}
         </span>
     </div>
-
+    {% if page.poster != "none" %}
+        {% assign poster_suffix = page.poster %}
+        {% unless page.poster %}
+            {% assign poster_suffix = 'png' %}
+        {% endunless%}
+        <img class="poster" src="{{site.cnd}}/images/poster/{{page.url | split: '/' | last | append: '.' | append: poster_suffix}}" alt="{{page.title}}">
+    {% endif %}
     <div class="content">
         {{ content }}
     </div>
 </article>
-{% if site.related_posts %}
-    <div class="related-articles">
-        <h3>推荐阅读:</h3>
-        {% for post in site.related_posts %}
-            <a href="{{ site.baseurl }}{{ post.url }}/">{{ post.title }}</a>
+<div class="related-articles">
+    <h3>推荐阅读:</h3>
+    {% assign related = '' %}
+    {% if page.tags.size >= 1%}
+        {% for post in site.posts %}
+            {% assign weight = 0 %}
+
+            {% if post.url == page.url %}
+                {% continue %}
+            {% endif %}
+
+            {% for tag in post.tags %}
+                {% if page.tags contains tag %}
+                  {% assign weight = weight | plus: 1 %}
+                {% endif %}
+            {% endfor %}
+
+
+            {% assign related = related | append: weight| append: '=' | append: post.url | append: '=' |append: post.title %}
+            {% unless forloop.last %}
+                {% assign related = related | append: '|' %}
+            {% endunless %}
+            <!-- <a href="{{ site.baseurl }}{{ post.url }}/">{{ post.title }}</a> -->
+
         {% endfor %}
-    </div>
-{% endif %}
+        {% assign related = related | split: '|' | sort | reverse %}
+        {% for re in related | limit: 5%}
+            {% assign post_parts = re | split: '=' %}
+            <a href="{{ site.baseurl }}{{ post_parts[1] }}/">{{ post_parts | last }}</a>
+        {% endfor %}
+    {% endif %}
+</div>
 <input class="comment-btn" type="button" value="参入讨论" />
 <div id="SOHUCS" sid="{{ page.url }}"></div>

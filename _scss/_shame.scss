@@ -1,0 +1,46 @@
+article .content h3{
+    .anchor{
+        display: none;
+        img{
+            height: 20px;
+        }
+    }
+    &:hover{
+      .anchor{
+        padding: 2px 20px 0 10px;
+            vertical-align: top;
+            display: inline-block;
+        }
+    }
+}
+article .content .img-desc{
+    max-width: 95%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+.see-archive-link{
+    background-color: #0074d9;
+    color: #fff;
+    font-size: 1.2em;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    margin: 1em auto;
+    padding: .3em .6em;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.video-list{
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    h3{
+        font-size: 1.5em;
+        margin: 1em 0 .5em;
+        color: $blue;
+    }
+}

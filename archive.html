@@ -29,36 +29,30 @@ title: Archive
     {% for tag in site.tags %}
         {% assign keyword = tag | first %}
         {% assign count = site.tags[keyword].size %}
+        {% if count < 10 %}
+            {% assign count = count | prepend: '0' %}
+        {% endif %}
         {% assign tags_with_count = tags_with_count | append: count | append: '=' | append: keyword %}
         {% unless forloop.last %}
             {% assign tags_with_count = tags_with_count | append: '|' %}
         {% endunless %}
     {% endfor %}
-    <!-- jekyll=1|reading=1|js=2|source-map=1|socket=1|gulp=1|hr=1|lifestyle=1|seo=1|css=3|blend=1 -->
+    <!-- 1=jekyll|1=reading|2=js|1=source-map|1=socket|1=gulp|1=hr|1=lifestyle|1=seo|3=css|1=blend -->
 
-    {% for tag_with_count in tags_with_count | split: '=' | sort %}
-        <h3>*{{tag_with_count}}</h3>
+    {% assign tags_with_count = tags_with_count | split: '|' | sort | reverse %}
+    {% for tag_with_count in tags_with_count %}
+        {% assign tag = tag_with_count | split: '=' | last %}
+
+        <h3>#{{ tag }}</h3>
+        <ul>
+            {% for post in site.tags[tag] %}
+            <li>
+                <time>{{ post.date | date: "%e %B %Y" }}</time>
+                <span> ... </span>
+                <a href="{{ post.url }}/">{{ post.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
     {% endfor %}
-
-    {% for tag in sortedtags %}
-
-      <h3>#{{ tag }}</h3>
-      <ul>
-      {% for post in site.tags[tag] %}
-        <li>
-            <time>{{ post.date | date: "%e %B %Y" }}</time>
-            <span> ... </span>
-            <a href="{{ post.url }}/">{{ post.title }}</a>
-        </li>
-      {% endfor %}
-      </ul>
-    {% endfor %}
-    <h3>{{tags_with_count}}</h3>
-
-    <h3>Test</h3>
-    {% assign xs = 'a|b|c' | split: '|' | sort %}
-{% for x in xs %}
-  <h3>{{ x }}</h3>
-{% endfor %}
     </div>
 </div>

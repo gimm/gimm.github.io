@@ -1,5 +1,5 @@
 /************************************************
-*    http://meyerweb.com/eric/tools/css/reset/  * 
+*    http://meyerweb.com/eric/tools/css/reset/  *
 *    v2.0 | 20110126                            *
 *    Modified By Gimm             *
 ************************************************/
@@ -85,7 +85,13 @@ a {
     color: $tomato;
   }
 }
-
+img{
+  max-width: 100%;
+}
+input, button{
+  -webkit-appearance: none;
+  border-radius: 0;
+}
 ::selection {
   color: $white;
   background: $tomato;

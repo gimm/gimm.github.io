@@ -1,8 +1,8 @@
 ---
 title: Gulp explained
-tags: js
+tags: js gulp
 ---
-![gulpjs](https://raw.githubusercontent.com/gulpjs/artwork/master/gulp.png)
+
 >Gulp is a streaming JavaScript build system built with node.js; it leverages the power
 of streams and code-over-configuration to automate, organize, and run development
 tasks very quickly and efficiently. Its main features/advantages are: **automation, stream, code over config**.

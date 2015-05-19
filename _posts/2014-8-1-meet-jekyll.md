@@ -1,5 +1,7 @@
 ---
 title: Meet Jekyll
+tags: jekyll
+poster: none
 ---
 
 
