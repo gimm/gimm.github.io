@@ -55,6 +55,10 @@ title: Archive
     {% endfor %}
     <h3>{{tags_with_count}}</h3>
 
-
+    <h3>Test</h3>
+    {% assign xs = 'a|b|c' | split: '|' | sort %}
+{% for x in xs %}
+  <h3>{{ x }}</h3>
+{% endfor %}
     </div>
 </div>
