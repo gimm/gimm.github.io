@@ -68,7 +68,7 @@
             }, false);
         }
 
-        //为标题添加锚点
+        //Add anchors for h3
         var h3s = document.querySelectorAll(".content h3");
         if(h3s){
             Array.prototype.slice.apply(h3s).forEach(function(h3){
@@ -85,7 +85,7 @@
             });
         }
 
-        //为图片添加说明
+        //Add desc for img
         var imgs = document.querySelectorAll(".content img");
         if(imgs){
             Array.prototype.slice.apply(imgs).forEach(function(img){
