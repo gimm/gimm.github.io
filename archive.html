@@ -36,8 +36,8 @@ title: Archive
     {% endfor %}
     <!-- jekyll=1|reading=1|js=2|source-map=1|socket=1|gulp=1|hr=1|lifestyle=1|seo=1|css=3|blend=1 -->
 
-    {% for tag_with_count in tags_with_count | split: '|' | sort %}
-        <h3>{{tag_with_count}}</h3>
+    {% for tag_with_count in tags_with_count | split: '=' | sort %}
+        <h3>*{{tag_with_count}}</h3>
     {% endfor %}
 
     {% for tag in sortedtags %}
@@ -55,6 +55,10 @@ title: Archive
     {% endfor %}
     <h3>{{tags_with_count}}</h3>
 
-
+    <h3>Test</h3>
+    {% assign xs = 'a|b|c' | split: '|' | sort %}
+{% for x in xs %}
+  <h3>{{ x }}</h3>
+{% endfor %}
     </div>
 </div>
