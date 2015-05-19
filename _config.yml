@@ -45,6 +45,8 @@ baseurl: ""
 #
 
 markdown: redcarpet #kramdown
+redcarpet:
+  extensions:    ["with_toc_data"]
 highlighter: pygments
 permalink: /article/:title
 
