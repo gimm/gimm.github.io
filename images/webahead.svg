@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1024px" height="1024px" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>icon_512x512@2x</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon_512x512@2x" sketch:type="MSArtboardGroup" fill="#FF6347">
+            <path d="M0,0 L256,0 L256,256 L512,256 L512,512 L0,512 L0,0 Z" id="Rectangle-1" sketch:type="MSShapeGroup"></path>
+            <path d="M512,512 L768,512 L768,768 L1024,768 L1024,1024 L512,1024 L512,512 Z" id="Rectangle-2" sketch:type="MSShapeGroup"></path>
+            <path d="M512,0 L768,0 L768,256 L1024,256 L1024,512 L512,512 L512,0 Z" id="Rectangle-3" sketch:type="MSShapeGroup" transform="translate(768.000000, 256.000000) rotate(180.000000) translate(-768.000000, -256.000000) "></path>
+        </g>
+    </g>
+</svg>
