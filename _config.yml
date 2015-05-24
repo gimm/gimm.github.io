@@ -50,6 +50,7 @@ permalink: /article/:title
 
 redcarpet:
   extensions:
+    - with_toc_data
     - hard_wrap
     - no_intra_emphasis
     - autolink

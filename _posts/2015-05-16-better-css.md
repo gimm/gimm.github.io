@@ -1,7 +1,9 @@
 ---
 title: 更好的组织你的CSS文件
+tags: css
+poster: jpg
 ---
-![better css](http://webahead.oss-cn-qingdao.aliyuncs.com/images/poster/better-css.jpg)
+
 在互联网盛行的今天，前端越来越受到重视。这个看脸的时代，界面观感显得尤为重要，因此 CSS 也在前端开发过程中扮演着越来越重要的角色。CSS 是个不会报错的语言，你可以随意堆砌，肆意妄为，在有大量 CSS 代码的站点，对 CSS 的**主动控制**就变得很有必要。
 
 如今常听说的 CSS 组织方法有 OOCSS,SMACSS,BEM。

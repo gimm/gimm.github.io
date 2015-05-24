@@ -3,18 +3,56 @@ layout: default
 title: Archive
 ---
 <div class="archive">
-{% for post in site.posts %}
-    {% capture month %}{{ post.date | date: '%m%Y' }}{% endcapture %}
-    {% capture nmonth %}{{ post.next.date | date: '%m%Y' }}{% endcapture %}
-        {% if month != nmonth %}
-            {% if forloop.index != 1 %}</ul>{% endif %}
+    <div>
+    <h2>日期分类</h2>
+    {% for post in site.posts %}
+        {% capture month %}{{ post.date | date: '%m%Y' }}{% endcapture %}
+        {% capture next_post_month %}{{ post.next.date | date: '%m%Y' }}{% endcapture %}
+
+        {% if month != next_post_month %}
+            {% if forloop.index != 1 %}
+                </ul>
+            {% endif %}
             <h3>{{ post.date | date: '%B %Y' }}</h3><ul>
         {% endif %}
+        <li>
+            <time>{{ post.date | date: "%e %B %Y" }}</time>
+            <span> ... </span>
+            <a href="{{ post.url }}/">{{ post.title }}</a>
+        </li>
+    {% endfor %}
+    </div>
+    <div>
+    <h2>标签分类</h2>
 
-    <li>
-        <time>{{ post.date | date: "%e %B %Y" }}</time>
-        <span> ... </span>
-        <a href="{{ post.url }}/">{{ post.title }}</a>
-    </li>
-{% endfor %}
+    {% assign tags_with_count = '' %}
+    {% for tag in site.tags %}
+        {% assign keyword = tag | first %}
+        {% assign count = site.tags[keyword].size %}
+        {% if count < 10 %}
+            {% assign count = count | prepend: '0' %}
+        {% endif %}
+        {% assign tags_with_count = tags_with_count | append: count | append: '=' | append: keyword %}
+        {% unless forloop.last %}
+            {% assign tags_with_count = tags_with_count | append: '|' %}
+        {% endunless %}
+    {% endfor %}
+    <!-- 1=jekyll|1=reading|2=js|1=source-map|1=socket|1=gulp|1=hr|1=lifestyle|1=seo|3=css|1=blend -->
+
+    {% assign tags_with_count = tags_with_count | split: '|' | sort | reverse %}
+    {% for tag_with_count in tags_with_count %}
+        {% assign tag = tag_with_count | split: '=' | last %}
+
+        <h3>#{{ tag }}</h3>
+        <ul>
+            {% for post in site.tags[tag] %}
+            <li>
+                <time>{{ post.date | date: "%e %B %Y" }}</time>
+                <span> ... </span>
+                <a href="{{ post.url }}/">{{ post.title }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+    </div>
 </div>

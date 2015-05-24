@@ -67,6 +67,42 @@
                 }
             }, false);
         }
+
+        //Add anchors for h3
+        var h3s = document.querySelectorAll(".content h3");
+        if(h3s){
+            Array.prototype.slice.apply(h3s).forEach(function(h3){
+                var id = h3.id;
+                var anchor = document.createElement("a");
+                anchor.id = "user-content-" + id;
+                anchor.className = "anchor";
+                anchor.href = "#" + id;
+                anchor["aria-hidden"] = true;
+                var icon = document.createElement("img");
+                icon.src = "/images/link.svg";
+                anchor.appendChild(icon);
+                h3.appendChild(anchor);
+            });
+        }
+
+        //Add desc for img
+        var imgs = document.querySelectorAll(".content img");
+        if(imgs){
+            Array.prototype.slice.apply(imgs).forEach(function(img){
+                var desc = img.alt;
+                if(desc){
+                    var span = document.createElement("span");
+                    span.className = "img-desc";
+                    span.textContent = desc;
+                    if(img.nextSibling){
+                        img.parentNode.insertBefore(span, img.nextSibling);
+                    }else{
+                        img.parentNode.appendChild(span);
+                    }
+
+                }
+            });
+        }
     };
 })(window);
 
