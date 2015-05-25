@@ -1,67 +1,133 @@
+`use strict`;
 /**
  * Created by gimm on 5/18/2015.
  */
-(function(w){
-    if(w.loader !== undefined){
-        return;
+(function(window){
+    if(window.w !== undefined){
+        return window.w;
     }
-    w.loader = {};
-    w.loader.load = function(url, type) {
-        if(!type){
-            type = url.substr(url.lastIndexOf(".")+1);
+
+    /*
+        hack helpful methods into native js
+    */
+
+    //
+    Function.prototype.shield = function(){
+        //validator could be rules, regex or function
+
+        var original = this;
+
+        if(original.shield){    //shield already
+            return original;
         }
-        if(type === "css"){
-            var link = document.createElement("link");
-            link.type = "text/css";
-            link.rel = "stylesheet";
-            link.href = url;
-            document.getElementsByTagName("head")[0].appendChild(link);
-        }else if(type === "js"){
-            var script = document.createElement("script");
-            script.type = "text/javascript";
-            script.src = url;
-            document.getElementsByTagName("head")[0].appendChild(script);
-        }else{
-            console.warn("Error loading asset ", url);
+
+        //declared parameters, with comments and white spaces. e.g. "/*required*/name, age"
+        var signature = original.toString().match(/\(([\s\S]*?)\)/).pop().replace(/((\/\/.*$)|(\s)/mg);
+
+        //parameters names, e.g. ["name", "age"]
+        var names = signature.replace(/(\/\*[\s\S]*?\*\/)/mg,'').split(",");
+
+        var args = Array.prototype.slice.call(arguments, 0, original.length);
+        if(args.length === 0){
+            //split signature into parts, e.g. [/*required,object*/name, age]
+            signature.split(/,(?!([a-z\|]+?\*+\/))/g).map(function(param, index){
+                var name = names[index];
+                //e.g. "require,object|array"
+                var rule = param.match(/^\/\*+([a-z|,]+)\*+\//).pop();
+            });
+        }
+
+        var shield = function() {
+            console.log("shield function with args", args);
+            return original.apply(this, arguments);
+        };
+
+        return shield;
+    };
+    /*arg规则
+    required(object|array)
+    default(value)
+    */
+
+    var hello = function(/*string*/name, /*string(hello)*/message){
+        //hello
+    }.shield();
+
+    var mixin = function(/*object*/target, /*object...*/source, /*boolean(false)*/overwrite){
+
+    }.shield();
+
+    var livereload = function(/*object|boolean|number(35729)*/livereload){
+    }.shield();
+
+    var sum = function(/*number*/x, /*number...*/y){
+    }.shield();
+
+    var w = window.w = {};
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    w.mixin = function(/*object*/target, /*object...*/source, /*boolean(true)*/overwrite){
+        overwrite = (overwrite === undefined ? true : !!overwrite);
+        for(var k in source){
+            if(source.hasOwnProperty(k) && !target.hasOwnProperty(k) || overwrite){
+                target[k] = source[k];
+            }
+        }
+        return target;
+    };
+
+    w.load = function(/*string|array*/url, /*object(undefined)*/attrs, /*function(undefined)*/callback) {
+        console.log("trying to load asset", url);
+        var head = document.head || document.getElementsByTagName("head")[0] || document.documentElement,
+            asset;
+        switch (url.split(".").pop().replace(/\?[\s\S]+/, "")){
+            case "css":
+                asset = w.mixin(document.createElement("link"), {
+                    type: "text/css", rel :"stylesheet", href: url, charset: "utf-8"
+                });
+                break;
+            case "js":
+                asset = w.mixin(document.createElement("script"), {
+                    type: "text/javascript", src: url, charset: "utf-8"
+                });
+                break;
+            default:
+                console.warn("Unsupported asset: ", url);
+        }
+        if(asset !== undefined){
+            if(typeof attrs === "object"){
+                w.mixin(asset, attrs);
+            }
+            if(typeof callback === "function"){
+                asset.onload = callback;
+            }
+            asset && head.appendChild(asset);
         }
     };
 
-    w.onload = function(){
-        w.loader.load("/styles/font.css");
-        if(document.querySelector(".highlight")){
-            window.loader.load("/styles/highlights.css");
-        }
+    window.onload = function(){
+        isMobile || w.load("/styles/desktop.css");
+        !isMobile && document.querySelector(".highlight") && w.load("/styles/highlights.css");
+
         var commentBtn = document.querySelector(".comment-btn");
         if(commentBtn && commentBtn.style.display!=="none"){
             commentBtn.addEventListener("click", function(){
                 this.style.display = "none";
-                if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                if(isMobile) {
                     (function(){
                         var expire_time = parseInt((new Date()).getTime()/(5*60*1000));
-                        var head = document.head || document.getElementsByTagName("head")[0] || document.documentElement;
-                        var script_version = document.createElement("script"),script_cyan = document.createElement("script");
-                        script_version.type = script_cyan.type = "text/javascript";
-                        script_version.charset = script_cyan.charset = "utf-8";
-                        script_version.onload = function(){
-                            script_cyan.id = 'changyan_mobile_js';
-                            script_cyan.src = 'http://changyan.itc.cn/upload/mobile/wap-js/changyan_mobile.js?client_id=cyrHvP6IQ&'
-                            + 'conf=prod_0b1f5470d926872fc636a0397ac75310&version=' + cyan_resource_version;
-                            head.insertBefore(script_cyan, head.firstChild);
-                        };
-                        script_version.src = 'http://changyan.sohu.com/upload/mobile/wap-js/version.js?_='+expire_time;
-                        head.insertBefore(script_version, head.firstChild);
+
+                        w.load("http://changyan.sohu.com/upload/mobile/wap-js/version.js?_="+expire_time, {}, function(){
+                            w.load('http://changyan.itc.cn/upload/mobile/wap-js/changyan_mobile.js?client_id=cyrHvP6IQ&'
+                                + 'conf=prod_0b1f5470d926872fc636a0397ac75310&version='
+                                + cyan_resource_version, {id: 'changyan_mobile_js'});
+                        });
                     })();
                 }else{
                     (function(){
                         var appid = 'cyrHvP6IQ',
                                 conf = 'prod_0b1f5470d926872fc636a0397ac75310';
-                        var doc = document,
-                                s = doc.createElement('script'),
-                                h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
-                        s.type = 'text/javascript';
-                        s.charset = 'utf-8';
-                        s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
-                        h.insertBefore(s,h.firstChild);
+
+                        w.load('http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid);
                         window.SCS_NO_IFRAME = true;
                     })();
                 }

@@ -3,7 +3,6 @@ layout: default
 ---
 
 <article class="article">
-    <div class="title"><h2>{{ page.title }}</h2></div>
     <div>
         <span>
             <svg class="icon">
@@ -12,6 +11,7 @@ layout: default
             {{ page.date | date: "%B %e, %Y" }}
         </span>
     </div>
+    <div class="title"><h2><a href="{{page.url}}">{{ page.title }}</a></h2></div>
     {% if page.poster != "none" %}
         {% assign poster_suffix = page.poster %}
         {% unless page.poster %}

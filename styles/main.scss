@@ -211,6 +211,9 @@ header {
     }
     .footer {
       opacity: .6;
+      & > span:not(:first-child){
+        margin-left: 1em;
+      }
     }
     &:hover, &:active {
       .footer {
@@ -229,7 +232,7 @@ header {
   .title {
     font-size: 1.5em;
     display: inline-block;
-    padding: 1em 0 .5em 0;
+    padding: .5em 0;
   }
   .content {
     padding: 1em 0;
@@ -265,7 +268,6 @@ header {
       }
     }
     p {
-      text-indent: 2em;
       padding: .4em 0;
       line-height: 1.5em;
     }
@@ -421,7 +423,6 @@ footer {
 
 // Icon
 .icon{
-  margin-left: 20px;
   height: 16px;
   width: 16px;
   display: inline-block;
