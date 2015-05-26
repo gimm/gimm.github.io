@@ -22,7 +22,7 @@
         }
 
         //declared parameters, with comments and white spaces. e.g. "/*required*/name, age"
-        var signature = original.toString().match(/\(([\s\S]*?)\)/).pop().replace(/((\/\/.*$)|(\s)/mg);
+        var signature = original.toString().match(/\(([\s\S]*?)\)/).pop().replace(/((\/\/.*$)|(\s)/mg, "");
 
         //parameters names, e.g. ["name", "age"]
         var names = signature.replace(/(\/\*[\s\S]*?\*\/)/mg,'').split(",");
