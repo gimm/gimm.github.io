@@ -1,3 +1,5 @@
+---
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +7,20 @@
     <title>About</title>
 </head>
 <body>
-    <h1>about page</h1>
+    <div class="container" id="about">
+        <h3></h3>
+
+        <p>I am a web developer from Wuhan, China. I <a href="/works">make things</a> for the web and
+            write about them <a href="{{ site.baseurl }}/">here</a>.</p>
+
+        <p>Got any interesting idea or a project to talk about or just want to say Hi? drop me a line at <a
+                href="mailto:{{site.email}}">{{site.email}}</a>.</p>
+        <hr>
+        <div class="baseline">
+            <span>©2015</span>
+            <span class="social-links bottom">{% include svg-icons.html %}</span>
+            <span><a href="#">&lt;/web ahead&gt;</a></span>
+        </div>
+    </div>
 </body>
 </html>

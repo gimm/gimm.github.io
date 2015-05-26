@@ -52,32 +52,23 @@
 {% include icons.svg %}
 <header>
     <div class="container">
-        <input type="checkbox" name="trigger" id="trigger">
-        <label for="trigger" class="trigger-label" role="button" aria-labelledby="menu">
-            <svg class="open">
-                <use xlink:href="#icon-menu" />
+        <a class="logo" href="/">
+            <svg>
+                <use xlink:href="#icon-logo"></use>
             </svg>
-            <svg class="close">
-                <use xlink:href="#icon-close" />
-            </svg>
-        </label>
-        <div class="social-links top">
-            {% include svg-icons.html %}
-        </div>
-        <div class="brand">
-        <!-- <img src="/images/webahead.svg" alt="logo" width="50px"> -->
-            <h1>
-
-                <a href="{{ site.baseurl }}/">{{ site.name }}</a><sub>with a <a href="/about">web head</a></sub>
-            </h1>
-        </div>
-        <div class="menu">
-            <ul>
-                <li><a href="/archive">Articles</a></li>
-                <li><a href="/videos">Videos</a></li>
-                <li><a href="/works">Works</a></li>
-            </ul>
-        </div>
+        </a>
+        {%unless page.title%}
+        <h1>
+            <a href="{{ site.baseurl }}/">{{site.name}}</a>
+            <sub>- {{site.description}} -</sub>
+        </h1>
+        {%endunless%}
+        {%if page.title%}
+        <h2>
+            <a href="{{ site.baseurl }}/">{{page.title}}</a>
+            <sub>{{ page.date | date: "%B %e, %Y" }}</sub>
+        </h2>
+        {%endif%}
     </div>
 </header>
 
@@ -85,19 +76,29 @@
     {{ content }}
 </div>
 <footer>
-    <div class="container" id="about">
-        <h3></h3>
-
-        <p>I am a web developer from Wuhan, China. I <a href="/works">make things</a> for the web and
-            write about them <a href="{{ site.baseurl }}/">here</a>.</p>
-
-        <p>Got any interesting idea or a project to talk about or just want to say Hi? drop me a line at <a
-                href="mailto:{{site.email}}">{{site.email}}</a>.</p>
-        <hr>
-        <div class="baseline">
-            <span>©2015</span>
-            <span class="social-links bottom">{% include svg-icons.html %}</span>
-            <span><a href="#">&lt;/web ahead&gt;</a></span>
+    <div class="container">
+        <div>
+            <h3>More</h3>
+            <ul>
+                <li><a href="/about">About</a></li>
+                <li><a href="/archive">Archive</a></li>
+                <li><a href="{{ site.baseurl }}/feed.xml">RSS</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Social</h3>
+            <ul>
+                <li><a target="_blank" href="https://github.com/{{ site.social-links.github }}">Github</a></li>
+                <li><a target="_blank" href="http://www.weibo.com/{{ site.social-links.weibo }}">Weibo</a></li>
+                <li><a target="_blank" href="mailto:{{ site.social-links.mail }}">Email</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Works</h3>
+            <ul>
+                <li><a target="_blank" href="http://unblock.github.io/google/">Google Luck</a></li>
+                <li><a target="_blank" href="https://www.npmjs.com/package/gulp-live-server">Gulp Live Server</a></li>
+            </ul>
         </div>
     </div>
 </footer>
