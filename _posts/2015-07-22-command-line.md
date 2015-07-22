@@ -1,3 +1,8 @@
+---
+title: command line
+tags: terminal zsh
+poster: jpg
+---
 最近开始用Mac做开发主力机，期间发现一些命令行工具相关的优化和配置。打造一个舒服的开发环境是值得投入时间的。
 
 ### zsh
